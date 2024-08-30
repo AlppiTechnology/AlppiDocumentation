@@ -1,0 +1,1 @@
+[OAD(./docs/api/system/swegger.json)]
