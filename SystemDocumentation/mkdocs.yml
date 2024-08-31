@@ -4,23 +4,42 @@ site_name: Alppi Documentation
 
 nav:
   - Home: index.md
-  - API: 
-    - api/index.md
-    - Authentication:
-      - api\authentication\index.md
-      - Login:
-        - api/authentication/login/login.md
-    - System: 
-      - api/system/index.md
+  - APIs: 
+    - "":
+      - Authentication:
+        - api\authentication\index.md
+        - Login: api/authentication/login.md
+      - System: 
+          - api/system/campus.md
+          - api/system/city.md
+          - api/system/class.md
+          - api/system/employee.md
+          - api/system/pedagogical.md
+          - api/system/school_year.md
+          - api/system/school_grade.md
+          - api/system/school_level.md
+          - api/system/shift.md
+          - api/system/skill_grade.md
+          - api/system/skill_settings.md
+          - api/system/student.md
+          - api/system/student_presence.md
+          - api/system/subject.md
+          - api/system/subject_area.md
+          - api/system/subject_grade.md
+          - api/system/term.md
+          - api/system/term_type.md
+          - api/system/user_group.md
+    
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
+      - Version 2.0.0:
+        - release-notes/v2/v2.0.1.md 
+        - release-notes/v2/v2.0.0.md
+
       - Version 1.0.0:
         - release-notes/v1/v1.0.1.md 
         - release-notes/v1/v1.0.0.md
 
-      - Version 2.0.0:
-        - release-notes/v2/v2.0.1.md 
-        - release-notes/v2/v2.0.0.md
 
 
 
@@ -102,8 +121,6 @@ theme:
 
 plugins:
   - search
-  - neoteroi.mkdocsoad:
-      use_pymdownx: true
 
 markdown_extensions:
   - pymdownx.details
@@ -113,9 +130,8 @@ markdown_extensions:
       alternate_style: true
 
 extra_css:
-  - css/mkdocsoad.css
   - css/crud.css
 
-
+  
 # Copyright
 copyright: Copyright &copy; 2024 - 2024 Alppi Technology

@@ -8,6 +8,12 @@
     --color-http-put__bg: #0084ff2b;
     --color-http-del__bg: #ff00002e;
 
+
+    --color-path-get: #00cc07;;
+    --color-path-post: #ff9900b3;
+    --color-path-put: #0084ffb5;
+    --color-path-del: #ff0000bd;
+
 }
 
 .http-get {
@@ -57,4 +63,24 @@
     
     padding: .1rem .9rem;
     margin-right: .3em;
+}
+
+.path-get {
+    color: var(--color-path-get);
+    text-decoration: underline;
+}
+
+.path-post {
+    color: var(--color-path-post);
+    text-decoration: underline;
+}
+
+.path-put {
+    color: var(--color-path-put);
+    text-decoration: underline;
+}
+
+.path-del {
+    color: var(--color-path-del);
+    text-decoration: underline;
 }
