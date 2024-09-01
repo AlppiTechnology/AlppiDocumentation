@@ -3,18 +3,18 @@
 
 ---
 
-## **<element class="http-get">GET<element>** - /campus/<element class="path-get">pk_campus</element>
+## **<element class="http-get">GET<element>** - /campus/<element class="path-get">pk_campus</element>/
 
 
 ??? note "Description"
     
     ### Description
-    Captura as informações detalhadas em do campus
+    Captura as informações detalhadas em do campus.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 
 
@@ -113,18 +113,18 @@
 ---
 
 **List Campus**
-## **<element class="http-get">GET<element>** - `/campus/list` 
+## **<element class="http-get">GET<element>** - /campus/list/
 
 
 ??? note "Description"
     
     ### Description
-    Lista todos os campus cadastrados no sistema
+    Lista todos os campus cadastrados no sistema.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `page`   | query param |string | 1 | Yes | |
 | `page_size`   | query param |string | 30 | Yes | |
 
@@ -243,19 +243,19 @@
 ---
 
 **Create Campus**
-## **<element class="http-post">POST<element>** - `/campus/create`
+## **<element class="http-post">POST<element>** - /campus/create/
 
 
 
 ??? note "Description"
     
     ### Description
-    Rota para criação de um novo campus
+    Rota para criação de um novo campus.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `fk_city`   | body |integer | None | No | Obtained in **List City** |
 | `fk_fu`   | body |integer | None | No | Obtained in **List City** |
 
@@ -419,12 +419,12 @@
 ??? note "Description"
     
     ### Description
-    Rota para a atualização dos dados de um campus
+    Rota para a atualização dos dados de um campus.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 | `fk_city`   | body |integer | None | No | Obtained in **List City** |
 | `fk_fu`   | body |integer | None | No | Obtained in **List City** |
@@ -605,12 +605,12 @@
 ??? note "Description"
     
     ### Description
-    Rota para a atualização de status de um campus
+    Rota para a atualização de status de um campus.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 
 
@@ -695,19 +695,19 @@
 ---
 
 **Delete Campus**
-## **<element class="http-del">DELL<element>** - - /campus/<element class="path-del">pk_campus</element>/delete/
+## **<element class="http-del">DELL<element>** - /campus/<element class="path-del">pk_campus</element>/delete/
 
 
 
 ??? note "Description"
     
     ### Description
-    A rota de login é fundamental
+    Roda para excluir um campus específico.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 
 

@@ -52,7 +52,7 @@
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 
 
 ### **Request Body**

@@ -1,41 +1,23 @@
 # Employee
-## Login Route
+
+**Get Employee**
 
 ---
 
-## **<element class="http-get">GET<element>** - `/login/`
+## **<element class="http-get">GET<element>** - /empoyee/<element class="path-get">pk_user</element>/
 
 
 ??? note "Description"
     
     ### Description
-    A rota de login é fundamental
+    Captura as informações detalhadas de um colaborador específico.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
 | `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
 
-
-### **Request Body**
-
-
-=== "application/json"
-
-    ``` json
-    {
-        "registration": "00001",
-        "password": "admin"
-    }
-    ```
-??? info "Body Schema"
-    
-    ```json
-    {
-        "registration": string,
-        "password": string
-    }
-    ```
 
 ### **Response Body**
 
@@ -44,19 +26,63 @@
     === "application/json"
 
         ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
+        {
+            "results": {
+                "pk_user": 2,
+                "registration": "00002",
+                "username": "Administrador",
+                "cpf": "02353336035",
+                "fk_campus": 1,
+                "campus_name": "Atitus Educação Passo Fundo",
+                "phone": "54992358847",
+                "email": "admin@admin.com",
+                "fk_city": 4911,
+                "city_name": "Passo Fundo",
+                "fk_fu": 23,
+                "fu_name": "Rio Grande do Sul",
+                "sex": "M",
+                "birth_date": "1999-12-14",
+                "created": "2024-05-27T23:29:45",
+                "edited": "2024-05-27T23:29:40",
+                "last_login": "2024-06-28T18:12:15",
+                "is_superuser": false,
+                "is_staff": false,
+                "is_active": true,
+                "employee_groups": [
+                    "Administrador"
+                ]
             }
+        }
         ```
 
     ??? info "Schema"
     
         ```{ .json .no-copy}
-            {
+        {
+            "results": {
+                "pk_user": integer,
                 "registration": string,
-                "password": string
+                "username": string,
+                "cpf": string,
+                "fk_campus": integer,
+                "campus_name": string,
+                "phone": string,
+                "email": string,
+                "fk_city": integer,
+                "city_name": string,
+                "fk_fu": integer,
+                "fu_name": string,
+                "sex": string,
+                "birth_date": string,
+                "created": string,
+                "edited": string,
+                "last_login": string,
+                "is_superuser": boolean,
+                "is_staff": boolean,
+                "is_active": boolean,
+                "employee_groups": list
             }
+        }
         ```
 
 ??? warning "400"
@@ -65,7 +91,22 @@
 
         ``` json
             {
-                "detail": "Informe o numero de matricula para o login."
+                "detail": "Não foi possivel encontrar este User."
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ``` { .json .no-copy}
+                {
+                    "detail": string
+                }
+            ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail":  "Este usuario não é um Colaborador"
             }
         ```
 
@@ -83,7 +124,7 @@
 
         ``` json
             {
-                "detail": "Problemas do servidor ao atualizar acesso do usuario.",
+                "detail": "Problemas ao visualizar Usuario.",
                 "error": "descrição do erro interno"
             }
         ```
@@ -99,40 +140,25 @@
 
 ---
 
-## **<element class="http-post">POST<element>** - `/login/`
-
+**List Employee**
+## **<element class="http-get">GET<element>** - /empoyee/list/
 
 
 ??? note "Description"
     
     ### Description
-    A rota de login é fundamental
+    Lista todos os colaboradores cadastrados no sistema.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
 | `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `page`   | query param |string | 1 | Yes | |
+| `page_size`   | query param |string | 30 | Yes | |
+| `search`   | query param | string | None | Yes | Name user to search |
+| `status`   | query param | string | 1 | Yes | 1-Active/0-Inative|
 
 
-### **Request Body**
-
-
-=== "application/json"
-
-    ``` json
-    {
-        "registration": "00001",
-        "password": "admin"
-    }
-    ```
-??? info "Body Schema"
-    
-    ```{ .json .no-copy}
-    {
-        "registration": string,
-        "password": string
-    }
-    ```
 
 ### **Response Body**
 
@@ -141,38 +167,52 @@
     === "application/json"
 
         ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
+        {
+            "navigation": {
+                "next": "http://alppi/sys/api/v1/employee/list/?page=3&page_size=20", // link para proxima pagina
+                "previous": "http://alppi/sys/api/v1/empoyee/list/?page=1&page_size=10" // link para pagina anterior
+            },
+            "next": 3, // numero da proxima pagina
+            "previous": 1, // numero na pagina anterior
+            "count": 1, // quantidade encontrata
+            "results": [
+                {
+                    "pk_user": 5,
+                    "registration": "00003",
+                    "username": "Professor 2",
+                    "is_active": true
+                },
+                {
+                    "pk_user": 7,
+                    "registration": "00005",
+                    "username": "Professor 3",
+                    "is_active": true
+                },
+                {
+                    "pk_user": 8,
+                    "registration": "00006",
+                    "username": "Professor 4",
+                    "is_active": true
+                }
+            ]
+        }
         ```
 
     ??? info "Schema"
     
         ```{ .json .no-copy}
-            {
-                "registration": string,
-                "password": string
-            }
+        {
+        "navigation": {
+            "next": string,
+            "previous": string
+        },
+        "next": integer,
+        "previous": integer,
+        "count": integer,
+        "results": list
+        }
+
         ```
-
-??? warning "400"
-
-    === "Error 1"
-
-        ``` json
-            {
-                "detail": "Informe o numero de matricula para o login."
-            }
-        ```
-
-        ??? info "Schema"
-        
-            ```{ .json .no-copy}
-                {
-                    "detail": string
-                }
-            ```
 
 ??? danger "500"
 
@@ -180,7 +220,7 @@
 
         ``` json
             {
-                "detail": "Problemas do servidor ao atualizar acesso do usuario.",
+                "detail": "Problemas ao listar todos os Usuarios.",
                 "error": "descrição do erro interno"
             }
         ```
@@ -196,21 +236,22 @@
 
 ---
 
-
-## **<element class="http-put">PUT<element>** - `/login/`
-
+**Create Employee**
+## **<element class="http-post">POST<element>** - /empoyee/create/
 
 
 
 ??? note "Description"
     
     ### Description
-    A rota de login é fundamental
+    Rota para criação de um novo colaborador.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
 | `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `fk_city`   | body |integer | None | No | Obtained in **List City** |
+| `fk_fu`   | body |integer | None | No | Obtained in **List City** |
 
 
 ### **Request Body**
@@ -220,16 +261,40 @@
 
     ``` json
     {
-        "registration": "00001",
-        "password": "admin"
-    }
+        "password": "123",
+        "cpf":"02353336035",
+        "fk_campus": 1,
+        "username": "Sargento 3",
+        "phone": "54992358847",
+        "email": "coordenador@atitus.com",
+        "fk_city": 4911,
+        "fk_fu": 23,
+        "sex": "M",
+        "birth_date": "1999-12-14",
+        "is_superuser": false,
+        "is_staff": false,
+        "groups":[
+            "coordenador"
+        ]
+    }   
     ```
 ??? info "Body Schema"
     
-    ```json
+    ```{ .json .no-copy}
     {
-        "registration": string,
-        "password": string
+    "password": string,
+    "cpf": string,
+    "fk_campus": integer,
+    "username": string,
+    "phone": string,
+    "email": string,
+    "fk_city": integer,
+    "fk_fu": integer,
+    "sex": string,
+    "birth_date": string,
+    "is_superuser": boolean,
+    "is_staff": boolean,
+    "groups": list
     }
     ```
 
@@ -240,19 +305,64 @@
     === "application/json"
 
         ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
+        {
+            "results": {
+                "pk_user": 32,
+                "registration": "00028",
+                "username": "Professor 10",
+                "cpf": "02353336123",
+                "fk_campus": 1,
+                "campus_name": "Atitus Educação Passo Fundo",
+                "phone": "54992358847",
+                "email": "professor@professor.com",
+                "fk_city": 4911,
+                "city_name": "Passo Fundo",
+                "fk_fu": 23,
+                "fu_name": "Rio Grande do Sul",
+                "sex": "M",
+                "birth_date": "1999-12-14",
+                "created": "2024-07-23T23:23:20",
+                "edited": "2024-07-23T23:23:19",
+                "last_login": "2024-07-23T23:23:19",
+                "is_superuser": false,
+                "is_staff": false,
+                "is_active": true,
+                "groups": [
+                    "professor"
+                ]
             }
+        }
         ```
 
     ??? info "Schema"
     
-        ```json
-            {
+        ```{ .json .no-copy}
+        {
+            "results": {
+                "pk_user": integer,
                 "registration": string,
-                "password": string
+                "username": string,
+                "cpf": string,
+                "fk_campus": integer,
+                "campus_name": string,
+                "phone": string,
+                "email": string,
+                "fk_city": integer,
+                "city_name": string,
+                "fk_fu": integer,
+                "fu_name": string,
+                "sex": string,
+                "birth_date": string,
+                "created": string,
+                "edited": string,
+                "last_login": string,
+                "is_superuser": boolean,
+                "is_staff": boolean,
+                "is_active": boolean,
+                "groups": list
             }
+        }
+
         ```
 
 ??? warning "400"
@@ -261,7 +371,7 @@
 
         ``` json
             {
-                "detail": "Informe o numero de matricula para o login."
+                "detail": "CNPJ-CPF invalido"
             }
         ```
 
@@ -272,6 +382,58 @@
                     "detail": string
                 }
             ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail": "Numero de registration ja cadastrada!"
+            }
+            
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                }
+            ```
+    === "Error 3"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este User."
+            }
+            
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                }
+            ```
+    === "Error 4"
+
+        ``` json
+            {
+                "detail": {
+                    "username": [
+                        "This field is required."
+                    ]
+                }
+            }
+            
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": dict
+                }
+            ```
 
 ??? danger "500"
 
@@ -279,7 +441,7 @@
 
         ``` json
             {
-                "detail": "Problemas do servidor ao atualizar acesso do usuario.",
+                "detail": "Problemas ao criar usuario",
                 "error": "descrição do erro interno"
             }
         ```
@@ -295,19 +457,24 @@
 
 ---
 
-## **<element class="http-del">DELL<element>** - `/login/`
+**Update Employee**
+## **<element class="http-put">PUT<element>** - /empoyee/<element class="path-put">pk_user</element>/update/
+
 
 
 
 ??? note "Description"
     
     ### Description
-    A rota de login é fundamental
+    Rota para a atualização dos dados de um colaborador.
 
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
 | `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
+| `fk_city`   | body |integer | None | No | Obtained in **List City** |
+| `fk_fu`   | body |integer | None | No | Obtained in **List City** |
 
 
 ### **Request Body**
@@ -317,16 +484,38 @@
 
     ``` json
     {
-        "registration": "00001",
-        "password": "admin"
+        "cpf":"02353336035",
+        "fk_campus": 1,
+        "username": "Professor 3",
+        "phone": "54992358847",
+        "email": "professor@professor.com",
+        "fk_city": 4911,
+        "fk_fu": 23,
+        "sex": "M",
+        "birth_date": "1999-12-14",
+        "is_superuser": false,
+        "is_staff": false,
+        "groups":[
+            "professor"
+        ]
     }
     ```
 ??? info "Body Schema"
     
     ```json
     {
-        "registration": string,
-        "password": string
+    "cpf": string,
+    "fk_campus": integer,
+    "username": string,
+    "phone": string,
+    "email": string,
+    "fk_city": integer,
+    "fk_fu": integer,
+    "sex": string,
+    "birth_date": string,
+    "is_superuser": boolean,
+    "is_staff": boolean,
+    "groups": list
     }
     ```
 
@@ -337,19 +526,63 @@
     === "application/json"
 
         ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
+        {
+            "results": {
+                "pk_user": 31,
+                "registration": "00027",
+                "username": "Professorteste",
+                "cpf": "02353336035",
+                "fk_campus": 1,
+                "campus_name": "Atitus Educação Passo Fundo",
+                "phone": "54992358847",
+                "email": "professor@professor.com",
+                "fk_city": 4911,
+                "city_name": "Passo Fundo",
+                "fk_fu": 23,
+                "fu_name": "Rio Grande do Sul",
+                "sex": "M",
+                "birth_date": "1999-12-14",
+                "created": "2024-07-23T23:01:15",
+                "edited": "2024-07-24T22:05:58",
+                "last_login": "2024-07-23T23:01:13",
+                "is_superuser": false,
+                "is_staff": false,
+                "is_active": true,
+                "groups": [
+                    "professor"
+                ]
             }
+        }
         ```
 
     ??? info "Schema"
     
         ```json
-            {
+        {
+            "results": {
+                "pk_user": integer,
                 "registration": string,
-                "password": string
+                "username": string,
+                "cpf": string,
+                "fk_campus": integer,
+                "campus_name": string,
+                "phone": string,
+                "email": string,
+                "fk_city": integer,
+                "city_name": string,
+                "fk_fu": integer,
+                "fu_name": string,
+                "sex": string,
+                "birth_date": string,
+                "created": string,
+                "edited": string,
+                "last_login": string,
+                "is_superuser": boolean,
+                "is_staff": boolean,
+                "is_active": boolean,
+                "groups": list
             }
+        }
         ```
 
 ??? warning "400"
@@ -358,7 +591,216 @@
 
         ``` json
             {
-                "detail": "Informe o numero de matricula para o login."
+                "detail": "Não foi possivel encontrar este User."
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                }
+            ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail": "CNPJ-CPF invalido"
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                }
+            ```
+    === "Error 3"
+
+        ``` json
+            {
+                "detail": {
+                    "username": [
+                        "This field is required."
+                    ]
+                }
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": dict
+                }
+            ```
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao editar usuario",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                    "error": string
+                }
+            ```
+
+---
+
+**Change Status Employee**
+## **<element class="http-put">PUT<element>** - /empoyee/<element class="path-put">pk_user</element>/changestatus/
+
+
+
+
+??? note "Description"
+    
+    ### Description
+    Rota para a atualização de status de um colaborador.
+
+
+| Name              | In | Type | Default | Nullable | Description                          |
+| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
+| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
+
+
+
+### **Request Body**
+
+
+=== "application/json"
+
+    ``` json
+    {
+        "is_active": 1
+    }
+    ```
+??? info "Body Schema"
+    
+    ```json
+    {
+        "is_active": integer
+    }
+    ```
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "results": "Usuário atualizado com sucesso."
+        }
+        ```
+
+    ??? info "Schema"
+    
+        ```json
+        {
+            "results": string
+        }
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este User."
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                }
+            ```
+
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao alterar status de usuario"
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                    "error": string
+                }
+            ```
+
+---
+
+**Delete Employee**
+## **<element class="http-del">DELL<element>** - /empoyee/<element class="path-del">pk_user</element>/delete/
+
+
+
+??? note "Description"
+    
+    ### Description
+    Rota para excluir um colaborador.
+
+
+| Name              | In | Type | Default | Nullable | Description                          |
+| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
+| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
+
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "results": "Usuario deletado com sucesso"
+        }
+        ```
+
+    ??? info "Schema"
+    
+        ```json
+        {
+            "results": string
+        }
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este User."
             }
         ```
 
@@ -376,7 +818,7 @@
 
         ``` json
             {
-                "detail": "Problemas do servidor ao atualizar acesso do usuario.",
+                "detail": "Problemas ao deletar Usuario",
                 "error": "descrição do erro interno"
             }
         ```
@@ -391,241 +833,3 @@
             ```
 
 ---
-
-
-
-
-
-??? success "200"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? warning "400"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? danger "501"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-
-
-??? abstract "502"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? info "503"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? question "504"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-
-??? warning "505"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-
-??? failure "506"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? danger "507"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? bug "508"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? example "509"
-
-    === "application/json"
-
-        ``` json
-            {
-                "registration": "00001",
-                "password": "admin"
-            }
-        ```
-
-    ??? info "Schema"
-    
-        ```json
-            {
-                "registration": string,
-                "password": string
-            }
-        ```
-
-??? quote "510"
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-
-    ~~~ python
-        import requests
-        ~~~

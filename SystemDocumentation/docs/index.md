@@ -4,7 +4,7 @@
 
 ---
 
-## **<element class="http-get">GET<element>** - /campus/<element class="path-get">pk_campus</element>
+## **<element class="http-get">GET<element>** - /campus/<element class="path-get">pk_campus</element>/
 
 
 ??? note "Description"
@@ -15,7 +15,7 @@
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 
 
@@ -114,7 +114,7 @@
 ---
 
 **List Campus**
-## **<element class="http-get">GET<element>** - `/campus/list` 
+## **<element class="http-get">GET<element>** - /campus/list/
 
 
 ??? note "Description"
@@ -125,7 +125,7 @@
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `page`   | query param |string | 1 | Yes | |
 | `page_size`   | query param |string | 30 | Yes | |
 
@@ -244,7 +244,7 @@
 ---
 
 **Create Campus**
-## **<element class="http-post">POST<element>** - `/campus/create`
+## **<element class="http-post">POST<element>** - /campus/create/
 
 
 
@@ -256,7 +256,7 @@
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `fk_city`   | body |integer | None | No | Obtained in **List City** |
 | `fk_fu`   | body |integer | None | No | Obtained in **List City** |
 
@@ -425,7 +425,7 @@
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 | `fk_city`   | body |integer | None | No | Obtained in **List City** |
 | `fk_fu`   | body |integer | None | No | Obtained in **List City** |
@@ -611,7 +611,7 @@
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
 | `pk_campus`| path variables| string | None | No | Obtained in **_List Campus_**|
 
 
@@ -696,7 +696,7 @@
 ---
 
 **Delete Campus**
-## **<element class="http-del">DELL<element>** - - /campus/<element class="path-del">pk_campus</element>/delete/
+## **<element class="http-del">DELL<element>** - /campus/<element class="path-del">pk_campus</element>/delete/
 
 
 
