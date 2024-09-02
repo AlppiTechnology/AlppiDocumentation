@@ -7,7 +7,7 @@ nav:
   - APIs: 
     - "":
       - Authentication:
-        - api\authentication\index.md
+        - api/authentication/index.md
         - Login: api/authentication/login.md
       - System: 
           - api/system/campus.md

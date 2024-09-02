@@ -1,5 +1,3 @@
-
-
 # Documentação da API Backend do Serviço de Autenticação
 Bem-vindo à documentação da API Backend do nosso serviço de autenticação!
 
