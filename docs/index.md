@@ -14,8 +14,8 @@ A API de Autenticação permite gerenciar a autenticação de usuários e a segu
 
 **Recursos:**
 
-- [Guia de Início Rápido](/docs/api/authentication/index.md)
-- [Referência de Endpoints](/docs/api/authentication/login.md)
+- [Guia de Início Rápido](/AlppiDocumentation/api/authentication/)
+- [Referência de Endpoints](/AlppiDocumentation/api/authentication/login.md)
 
 
 ### API de Sistema
@@ -28,8 +28,8 @@ A API de Sistema oferece acesso às funcionalidades essenciais do sistema e perm
 
 **Recursos:**
 
-- [Guia de Integração](/docs/api/system/index.md)
-- [Referência de Endpoints](/docs/api/system/campus.md)
+- [Guia de Integração](/AlppiDocumentation/api/system/index.md)
+- [Referência de Endpoints](/AlppiDocumentation/api/system/campus.md)
 
 
 ## Release Notes
@@ -42,7 +42,7 @@ Fique atualizado com as últimas melhorias, correções e novas funcionalidades 
 
 **Acesse as Release Notes:**
 
-- [Release Notes](/docs/release-notes/v1/v1.0.0.md)
+- [Release Notes](/AlppiDocumentation/release-notes/v1/v1.0.0.md)
 
 ---
 
