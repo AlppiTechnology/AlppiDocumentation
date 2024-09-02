@@ -26,20 +26,20 @@ A API de Sistema oferece acesso às funcionalidades essenciais do sistema e perm
 - **Consultas e Relatórios**: Detalhes sobre como consultar dados e gerar relatórios.
 
 **Recursos:**
-- [Guia de Integração](#)
-- [Referência de Endpoints](#)
+- [Guia de Integração](/docs/api/system/index.md)
+- [Referência de Endpoints](/docs/api/system/campus.md)
 
 
-## Notas de Lançamento
+## Release Notes
 
-Fique atualizado com as últimas melhorias, correções e novas funcionalidades das nossas APIs. Em nossa página de Notas de Lançamento, você encontrará:
+Fique atualizado com as últimas melhorias, correções e novas funcionalidades das nossas APIs. Em nossa página de Release Notes, você encontrará:
 
-- **Notas de Lançamento Recente**: Informações sobre as versões mais recentes das APIs.
+- **Release Notes Recente**: Informações sobre as versões mais recentes das APIs.
 - **Histórico de Versões**: Um registro completo das atualizações anteriores e suas mudanças.
 - **Mudanças Importantes**: Destaques das alterações que podem impactar a integração ou o uso das APIs.
 
-**Acesse as Notas de Lançamento:**
-- [Notas de Lançamento](#)
+**Acesse as Release Notes:**
+- [Release Notes](/docs/release-notes/v1/v1.0.0.md)
 
 ---
 
