@@ -8,13 +8,13 @@ Este portal foi criado para fornecer todas as informações e ferramentas necess
 
 A API de Autenticação permite gerenciar a autenticação de usuários e a segurança da sua aplicação. Nossa documentação inclui:
 
-- **Guia de Início Rápido**: Aprenda como começar a usar a API de Autenticação rapidamente.
+- **Introdução à API de Autenticação**: Visão geral das principais funcionalidades e como integrá-las.
 - **Autenticação de Usuários**: Detalhes sobre como criar, gerenciar e validar tokens de autenticação.
 - **Segurança e Permissões**: Informações sobre como proteger suas operações e dados.
 
 **Recursos:**
 
-- [Guia de Início Rápido](/AlppiDocumentation/api/authentication/)
+- [Introdução à API de Autenticaçãoo](/AlppiDocumentation/api/authentication/)
 - [Referência de Endpoints](/AlppiDocumentation/api/authentication/login.md)
 
 
@@ -28,7 +28,7 @@ A API de Sistema oferece acesso às funcionalidades essenciais do sistema e perm
 
 **Recursos:**
 
-- [Guia de Integração](/AlppiDocumentation/api/system/)
+- [Introdução à API de Sistema](/AlppiDocumentation/api/system/)
 - [Referência de Endpoints](/AlppiDocumentation/api/system/campus.md)
 
 
