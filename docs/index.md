@@ -28,7 +28,7 @@ A API de Sistema oferece acesso às funcionalidades essenciais do sistema e perm
 
 **Recursos:**
 
-- [Guia de Integração](/AlppiDocumentation/api/system/index.md)
+- [Guia de Integração](/AlppiDocumentation/api/system/)
 - [Referência de Endpoints](/AlppiDocumentation/api/system/campus.md)
 
 
