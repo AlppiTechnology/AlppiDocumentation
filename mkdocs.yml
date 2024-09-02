@@ -32,12 +32,7 @@ nav:
     
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
-      - Version 2.0.0:
-        - release-notes/v2/v2.0.1.md 
-        - release-notes/v2/v2.0.0.md
-
       - Version 1.0.0:
-        - release-notes/v1/v1.0.1.md 
         - release-notes/v1/v1.0.0.md
 
 
