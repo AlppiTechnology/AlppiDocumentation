@@ -1,22 +1,29 @@
-# Documentação da API Backend do Serviço de Autenticação
-Bem-vindo à documentação da API Backend do nosso serviço de autenticação!
+# Introdução à API de Autenticação
 
-Esta página contém informações detalhadas sobre como integrar e utilizar a API que gerencia a autenticação e o controle de acesso em nossas aplicações. A API foi projetada para oferecer uma forma segura e eficiente de validar usuários, gerenciar sessões e lidar com permissões de acesso.
+A API de Autenticação é projetada para gerenciar o acesso seguro ao seu sistema, oferecendo funcionalidades essenciais para autenticação de usuários e controle de acesso baseado em CNPJ. Ela permite realizar login, gerar tokens JWT para autorização e consultar módulos liberados para o cliente com base no CNPJ.
 
-## O Que Você Encontrará Aqui
-1- Visão Geral da API: Entenda o propósito da API e como ela se encaixa na arquitetura geral do sistema.
+## Visão Geral
 
-2- Endpoints Disponíveis: Descrição dos diferentes pontos de acesso da API, incluindo os métodos HTTP suportados, URLs, e parâmetros necessários.
+A API de Autenticação facilita o processo de login e autorização, garantindo que os usuários possam acessar somente os recursos e módulos para os quais estão autorizados. Utilizando tokens JWT, a API assegura a proteção e a integridade das sessões de usuário e permite uma gestão eficaz dos módulos disponíveis com base em dados específicos do cliente.
 
-3- Autenticação e Autorização: Detalhes sobre os mecanismos de segurança utilizados, incluindo autenticação via tokens e permissões de acesso.
+### Principais Funcionalidades
 
-4- Exemplos de Requisições e Respostas: Exemplos práticos para ajudar você a entender como fazer chamadas à API e interpretar as respostas recebidas.
+1. **Login e Geração de Token**  
+   Permite que os usuários façam login fornecendo suas credenciais. Após a autenticação bem-sucedida, a API gera um token JWT que deve ser utilizado para autenticar as solicitações subsequentes.
 
-5- Códigos de Status: Explicação dos códigos de resposta HTTP que a API pode retornar, junto com possíveis mensagens de erro e como lidar com elas.
+2. **Informações sobre Módulos Liberados**  
+   Fornece informações sobre quais módulos e funcionalidades estão disponíveis para o cliente com base no CNPJ fornecido. Isso permite controlar e personalizar o acesso às diferentes áreas do sistema.
 
-6- Procedimentos de Erro e Depuração: Informações sobre como diagnosticar e resolver problemas comuns que podem surgir durante a integração com a API.
+## Recursos Adicionais
 
-## Como Usar Esta Documentação
-Navegue pelos Endpoints: Encontre o endpoint específico que você precisa e revise os detalhes técnicos.
-Experimente os Exemplos: Utilize os exemplos fornecidos para testar e ajustar suas requisições.
-Consulte as Seções de Erro: Familiarize-se com os códigos de erro e suas soluções para garantir uma integração tranquila.
+- Guia de Integração: Um passo a passo sobre como integrar a API de Autenticação em sua aplicação.
+- Exemplos de Código: Exemplos práticos de como usar os endpoints da API.
+- Referência Completa de Endpoints:  Detalhamento de todos os endpoints disponíveis.
+
+## Suporte e Contato
+
+Para qualquer dúvida ou necessidade de assistência técnica relacionada à API de Autenticação, nossa equipe de suporte está à disposição para ajudar. Entre em contato conosco para obter suporte ou esclarecimentos adicionais.
+
+---
+
+Utilize a API de Autenticação para implementar um sistema de login seguro, gerenciar tokens JWT e controlar o acesso aos módulos do sistema com base nas necessidades do cliente!

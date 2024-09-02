@@ -10,6 +10,7 @@ nav:
         - api/authentication/index.md
         - Login: api/authentication/login.md
       - System: 
+          - api/system/index.md
           - api/system/campus.md
           - api/system/city.md
           - api/system/class.md
