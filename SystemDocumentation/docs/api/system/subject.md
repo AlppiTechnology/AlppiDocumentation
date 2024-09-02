@@ -147,11 +147,11 @@
         ```{ .json .no-copy}
         {
             "navigation": {
-                "next": null,
-                "previous": null
+                "next": string,
+                "previous": string
             },
-            "next": null,
-            "previous": null,
+            "next": integer,
+            "previous": integer,
             "count": integer,
             "results": array of objects {
                 "pk_subject": integer,
