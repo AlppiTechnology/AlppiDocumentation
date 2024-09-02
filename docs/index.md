@@ -13,6 +13,7 @@ A API de Autenticação permite gerenciar a autenticação de usuários e a segu
 - **Segurança e Permissões**: Informações sobre como proteger suas operações e dados.
 
 **Recursos:**
+
 - [Guia de Início Rápido](/docs/api/authentication/index.md)
 - [Referência de Endpoints](/docs/api/authentication/login.md)
 
@@ -26,6 +27,7 @@ A API de Sistema oferece acesso às funcionalidades essenciais do sistema e perm
 - **Consultas e Relatórios**: Detalhes sobre como consultar dados e gerar relatórios.
 
 **Recursos:**
+
 - [Guia de Integração](/docs/api/system/index.md)
 - [Referência de Endpoints](/docs/api/system/campus.md)
 
@@ -39,6 +41,7 @@ Fique atualizado com as últimas melhorias, correções e novas funcionalidades 
 - **Mudanças Importantes**: Destaques das alterações que podem impactar a integração ou o uso das APIs.
 
 **Acesse as Release Notes:**
+
 - [Release Notes](/docs/release-notes/v1/v1.0.0.md)
 
 ---
