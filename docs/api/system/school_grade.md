@@ -53,7 +53,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SchoolGrade."
+            "detail": "Não foi possivel encontrar este SchoolGrade.",
+            "render": 1
         }
         ```
 
@@ -61,7 +62,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -81,7 +83,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -170,7 +172,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -253,7 +255,8 @@
                 "name": [
                     "This field is required."
                 ]
-            }
+            },
+                "render": 0
         }
         ```
 
@@ -261,7 +264,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": object
+                    "detail": object,
+                    "render": integer
                 }
             ```
 
@@ -358,7 +362,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SchoolGrade."
+            "detail": "Não foi possivel encontrar este SchoolGrade.",
+            "render": 1|
         }
         ```
 
@@ -366,7 +371,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -385,7 +391,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -425,7 +431,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -444,7 +451,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

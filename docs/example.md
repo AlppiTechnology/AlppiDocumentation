@@ -79,7 +79,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este Campus."
+                "detail": "Não foi possivel encontrar este Campus.",
+                "render": 0
             }
         ```
 
@@ -87,7 +88,8 @@
         
             ``` { .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -217,7 +219,8 @@
         
             ``` { .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -357,7 +360,8 @@
 
         ``` json
             {
-                "detail": "CNPJ-CPF invalido"
+                "detail": "CNPJ-CPF invalido",
+                "render": 1
             }
         ```
 
@@ -365,7 +369,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
@@ -376,7 +381,8 @@
                     "campus_code": [
                         "campus with this campus code already exists."
                     ]
-                }
+                },
+                "render": 0
             }
             
         ```
@@ -385,7 +391,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": dict
+                    "detail": object,
+                    "render": integer
                 }
             ```
 
@@ -529,7 +536,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar todos os Campus."
+                "detail": "Não foi possivel encontrar todos os Campus.",
+                "render": 1
             }
         ```
 
@@ -537,14 +545,16 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
             {
-                "detail": "CNPJ-CPF invalido"
+                "detail": "CNPJ-CPF invalido",
+                "render": 1
             }
         ```
 
@@ -552,7 +562,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 3"
@@ -563,7 +574,8 @@
                     "campus_name": [
                         "This field is required."
                     ]
-                }
+                },
+                "render": 0
             }
         ```
 
@@ -571,7 +583,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": dict
+                    "detail": object,
+                    "render": integer
                 }
             ```
 
@@ -660,7 +673,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este Campus."
+                "detail": "Não foi possivel encontrar este Campus.",
+                "render": 1
             }
         ```
 
@@ -668,7 +682,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -738,7 +753,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar todos os Campus."
+                "detail": "Não foi possivel encontrar todos os Campus.",
+                "render": 1
             }
         ```
 
@@ -746,7 +762,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 

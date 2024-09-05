@@ -6,18 +6,15 @@
 
 ## **<element class="http-get">GET<element>** - /empoyee/<element class="path-get">pk_user</element>/
 
-
 ??? note "Description"
-    
+
     ### Description
     Captura as informações detalhadas de um colaborador específico.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
-
+| Name            | In             | Type   | Default | Nullable | Description                     |
+| :-------------- | :------------- | :----- | :------ | :------- | :------------------------------ |
+| `Authorization` | header         | string | None    | No       | Obtained in **Login**           |
+| `pk_user`       | path variables | string | None    | No       | Obtained in **_List Employee_** |
 
 ### **Response Body**
 
@@ -56,7 +53,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
         {
             "results": {
@@ -91,15 +88,17 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este User."
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
             }
         ```
 
         ??? info "Schema"
-        
+
             ``` { .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
@@ -111,10 +110,11 @@
         ```
 
         ??? info "Schema"
-        
+
             ``` { .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -130,10 +130,10 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -141,24 +141,21 @@
 ---
 
 **List Employee**
+
 ## **<element class="http-get">GET<element>** - /empoyee/list/
 
-
 ??? note "Description"
-    
+
     ### Description
     Lista todos os colaboradores cadastrados no sistema.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `page`   | query param |string | 1 | Yes | |
-| `page_size`   | query param |string | 30 | Yes | |
-| `search`   | query param | string | None | Yes | Name user to search |
-| `status`   | query param | string | 1 | Yes | 1-Active/0-Inative|
-
-
+| Name            | In          | Type   | Default | Nullable | Description           |
+| :-------------- | :---------- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header      | string | None    | No       | Obtained in **Login** |
+| `page`          | query param | string | 1       | Yes      |                       |
+| `page_size`     | query param | string | 30      | Yes      |                       |
+| `search`        | query param | string | None    | Yes      | Name user to search   |
+| `status`        | query param | string | 1       | Yes      | 1-Active/0-Inative    |
 
 ### **Response Body**
 
@@ -199,7 +196,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
         {
         "navigation": {
@@ -226,10 +223,10 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -237,25 +234,21 @@
 ---
 
 **Create Employee**
+
 ## **<element class="http-post">POST<element>** - /empoyee/create/
 
-
-
 ??? note "Description"
-    
+
     ### Description
     Rota para criação de um novo colaborador.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `fk_city`   | body |integer | None | No | Obtained in **List City** |
-| `fk_fu`   | body |integer | None | No | Obtained in **List City** |
-
+| Name            | In     | Type    | Default | Nullable | Description               |
+| :-------------- | :----- | :------ | :------ | :------- | :------------------------ |
+| `Authorization` | header | string  | None    | No       | Obtained in **Login**     |
+| `fk_city`       | body   | integer | None    | No       | Obtained in **List City** |
+| `fk_fu`         | body   | integer | None    | No       | Obtained in **List City** |
 
 ### **Request Body**
-
 
 === "application/json"
 
@@ -276,10 +269,11 @@
         "groups":[
             "coordenador"
         ]
-    }   
+    }
     ```
+
 ??? info "Body Schema"
-    
+
     ```{ .json .no-copy}
     {
     "password": string,
@@ -335,7 +329,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
         {
             "results": {
@@ -371,47 +365,53 @@
 
         ``` json
             {
-                "detail": "CNPJ-CPF invalido"
+                "detail": "CNPJ-CPF invalido",
+                "render": 1
             }
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
             {
-                "detail": "Numero de registration ja cadastrada!"
+                "detail": "Numero de registration ja cadastrada!",
+                "render": 1
             }
-            
+
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 3"
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este User."
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
             }
-            
+
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 4"
@@ -422,16 +422,18 @@
                     "username": [
                         "This field is required."
                     ]
-                }
+                },
+                "render": 0
             }
-            
+
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": dict
+                    "detail": object,
+                    "render": integer
                 }
             ```
 
@@ -447,10 +449,10 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -458,27 +460,22 @@
 ---
 
 **Update Employee**
+
 ## **<element class="http-put">PUT<element>** - /empoyee/<element class="path-put">pk_user</element>/update/
 
-
-
-
 ??? note "Description"
-    
+
     ### Description
     Rota para a atualização dos dados de um colaborador.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
-| `fk_city`   | body |integer | None | No | Obtained in **List City** |
-| `fk_fu`   | body |integer | None | No | Obtained in **List City** |
-
+| Name            | In             | Type    | Default | Nullable | Description                     |
+| :-------------- | :------------- | :------ | :------ | :------- | :------------------------------ |
+| `Authorization` | header         | string  | None    | No       | Obtained in **Login**           |
+| `pk_user`       | path variables | string  | None    | No       | Obtained in **_List Employee_** |
+| `fk_city`       | body           | integer | None    | No       | Obtained in **List City**       |
+| `fk_fu`         | body           | integer | None    | No       | Obtained in **List City**       |
 
 ### **Request Body**
-
 
 === "application/json"
 
@@ -500,8 +497,9 @@
         ]
     }
     ```
+
 ??? info "Body Schema"
-    
+
     ```json
     {
     "cpf": string,
@@ -556,7 +554,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```json
         {
             "results": {
@@ -591,30 +589,34 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este User."
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
             }
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
             {
-                "detail": "CNPJ-CPF invalido"
+                "detail": "CNPJ-CPF invalido",
+                "render": 1
             }
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 3"
@@ -625,15 +627,17 @@
                     "username": [
                         "This field is required."
                     ]
-                }
+                },
+                "render": 0
             }
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": dict
+                    "detail": object,
+                    "render": integer
                 }
             ```
 
@@ -649,10 +653,10 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -660,26 +664,20 @@
 ---
 
 **Change Status Employee**
+
 ## **<element class="http-put">PUT<element>** - /empoyee/<element class="path-put">pk_user</element>/changestatus/
 
-
-
-
 ??? note "Description"
-    
+
     ### Description
     Rota para a atualização de status de um colaborador.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
-
-
+| Name            | In             | Type   | Default | Nullable | Description                     |
+| :-------------- | :------------- | :----- | :------ | :------- | :------------------------------ |
+| `Authorization` | header         | string | None    | No       | Obtained in **Login**           |
+| `pk_user`       | path variables | string | None    | No       | Obtained in **_List Employee_** |
 
 ### **Request Body**
-
 
 === "application/json"
 
@@ -688,8 +686,9 @@
         "is_active": 1
     }
     ```
+
 ??? info "Body Schema"
-    
+
     ```json
     {
         "is_active": integer
@@ -709,7 +708,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```json
         {
             "results": string
@@ -722,18 +721,19 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este User."
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
             }
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
-
 
 ??? danger "500"
 
@@ -747,10 +747,10 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -758,21 +758,18 @@
 ---
 
 **Delete Employee**
+
 ## **<element class="http-del">DELL<element>** - /empoyee/<element class="path-del">pk_user</element>/delete/
 
-
-
 ??? note "Description"
-    
+
     ### Description
     Rota para excluir um colaborador.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `pk_user`| path variables| string | None | No | Obtained in **_List Employee_**|
-
+| Name            | In             | Type   | Default | Nullable | Description                     |
+| :-------------- | :------------- | :----- | :------ | :------- | :------------------------------ |
+| `Authorization` | header         | string | None    | No       | Obtained in **Login**           |
+| `pk_user`       | path variables | string | None    | No       | Obtained in **_List Employee_** |
 
 ### **Response Body**
 
@@ -787,7 +784,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```json
         {
             "results": string
@@ -800,15 +797,17 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este User."
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
             }
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -824,10 +823,10 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

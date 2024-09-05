@@ -89,7 +89,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

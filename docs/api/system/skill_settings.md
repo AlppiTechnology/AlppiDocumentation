@@ -65,7 +65,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -152,7 +152,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -232,7 +232,8 @@
 
         ``` json
         {
-            "detail": "Informe o nome da Habilidade"
+            "detail": "Informe o nome da Habilidade",
+            "render": 1
         }
         ```
 
@@ -240,14 +241,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
         {
-            "detail": "Informe o descrição da Habilidade"
+            "detail": "Informe o descrição da Habilidade",
+            "render": 1
         }
         ```
 
@@ -255,7 +258,8 @@
 
             ```{ .json .no-copy}
             {
-                "detail": string
+                "detail": string,
+                "render": integer
             }
             ```
 
@@ -360,7 +364,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SkillSettings."
+            "detail": "Não foi possivel encontrar este SkillSettings.",
+            "render": 1
         }
         ```
 
@@ -368,14 +373,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
         {
-            "detail": "Informe o nome da Habilidade"
+            "detail": "Informe o nome da Habilidade",
+            "render": 1
         }
         ```
 
@@ -383,14 +390,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 3"
 
         ``` json
             {
-                "detail": "Informe a descrição da Habilidade"
+                "detail": "Informe a descrição da Habilidade",
+                "render": 1
             }
         ```
 
@@ -398,7 +407,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -417,7 +427,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -482,7 +492,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este SkillSettings."
+                "detail": "Não foi possivel encontrar este SkillSettings.",
+                "render": 1
             }
         ```
 
@@ -490,7 +501,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -509,7 +521,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -543,7 +555,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este SkillSettings."
+                "detail": "Não foi possivel encontrar este SkillSettings.",
+                "render": 1
             }
         ```
 
@@ -551,7 +564,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -570,7 +584,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

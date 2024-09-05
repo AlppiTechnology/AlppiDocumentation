@@ -62,7 +62,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este Subject."
+            "detail": "Não foi possivel encontrar este Subject.",
+            "render": 1
         }
         ```
 
@@ -70,7 +71,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -90,7 +92,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -180,7 +182,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -269,7 +271,8 @@
 
         ``` json
         {
-            "detail": "Informe o nome da disciplina"
+            "detail": "Informe o nome da disciplina",
+            "render": 1
         }
         ```
 
@@ -277,14 +280,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
         {
-            "detail": "Informe a área do conhecimento da disciplina"
+            "detail": "Informe a área do conhecimento da disciplina",
+            "render": 1
         }
         ```
 
@@ -292,7 +297,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -402,7 +408,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este Subject."
+            "detail": "Não foi possivel encontrar este Subject.",
+            "render": 1
         }
         ```
 
@@ -410,14 +417,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
         {
-            "detail": "Informe o nome da disciplina"
+            "detail": "Informe o nome da disciplina",
+            "render": 1
         }
         ```
 
@@ -425,7 +434,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -446,7 +456,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -512,7 +522,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este Subject."
+                "detail": "Não foi possivel encontrar este Subject.",
+                "render": 1
             }
         ```
 
@@ -520,7 +531,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -539,7 +551,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -579,7 +591,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -598,7 +611,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

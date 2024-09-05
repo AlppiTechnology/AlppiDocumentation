@@ -104,7 +104,8 @@
 
         ``` json
             {
-                "detail": "Informe o numero de matricula para o login."
+                "detail": "Informe o numero de matricula para o login.",
+                "render": 1
             }
         ```
 
@@ -112,14 +113,16 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
             {
-                "detail": "Informe a senha para o login."
+                "detail": "Informe a senha para o login.",
+                "render": 1
             }
         ```
 
@@ -127,14 +130,16 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 3"
 
         ``` json
             {
-                "detail": "Este usuario não existe!"
+                "detail": "Este usuario não existe!",
+                "render": 1
             }
         ```
 
@@ -142,14 +147,16 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 5"
 
         ``` json
             {
-                "detail": "Não fio possivel encontrar um periodo no school_year_date com a data atual."
+                "detail": "Não fio possivel encontrar um periodo no school_year_date com a data atual.",
+                "render": 1
             }
         ```
 
@@ -157,14 +164,16 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 6"
 
         ``` json
             {
-                "detail": "Este usuario não contem grupos!"
+                "detail": "Este usuario não contem grupos!",
+                "render": 1
             }
         ```
 
@@ -172,7 +181,8 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -228,7 +238,7 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -245,7 +255,7 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -262,7 +272,7 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -279,7 +289,7 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

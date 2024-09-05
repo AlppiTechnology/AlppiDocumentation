@@ -50,7 +50,7 @@
 
         ``` json
             {
-                "detail": "Problemas ao listar todos Grupos."
+                "detail": "Problemas ao listar todos Grupos.",
                 "error": "descrição do erro interno"
             }
         ```
@@ -59,7 +59,7 @@
         
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

@@ -11,9 +11,9 @@
     ### Description
     Captura as informações detalhadas de um Ano Letivo específico.
 
-| Name               | In             | Type   | Default | Nullable | Description                           |
-| :----------------- | :------------- | :----- | :------ | :------- | :------------------------------------ |
-| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                 |
+| Name             | In             | Type   | Default | Nullable | Description                        |
+| :--------------- | :------------- | :----- | :------ | :------- | :--------------------------------- |
+| `Authorization`  | header         | string | None    | No       | Obtained in **Login**              |
 | `pk_school_year` | path variables | string | None    | No       | Obtained in **_List School Year_** |
 
 ### **Response Body**
@@ -135,7 +135,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SchoolYear."
+            "detail": "Não foi possivel encontrar este SchoolYear.",
+            "render": 1
         }
         ```
 
@@ -143,10 +144,10 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
-
 
 ??? danger "500"
 
@@ -154,7 +155,7 @@
 
         ``` json
             {
-                "detail": "Problemas ao listar SchoolYearDate",,
+                "detail": "Problemas ao listar SchoolYearDate",
                 "error": "descrição do erro interno"
             }
         ```
@@ -163,7 +164,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -180,7 +181,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -197,7 +198,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -213,12 +214,11 @@
     ### Description
     Lista todos os Anos Letivos cadastrados no sistema
 
-| Name            | In          | Type   | Default | Nullable | Description                 |
-| :-------------- | :---------- | :----- | :------ | :------- | :-------------------------- |
-| `Authorization` | header      | string | None    | No       | Obtained in **Login**       |
-| `page`          | query param | string | 1       | Yes      |                             |
-| `page_size`     | query param | string | 30      | Yes      |                             |
-
+| Name            | In          | Type   | Default | Nullable | Description           |
+| :-------------- | :---------- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header      | string | None    | No       | Obtained in **Login** |
+| `page`          | query param | string | 1       | Yes      |                       |
+| `page_size`     | query param | string | 30      | Yes      |                       |
 
 ### **Response Body**
 
@@ -288,7 +288,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -306,12 +306,12 @@
 
     **OBS: o campo "skill" no body define se voce deseja habilitar havaliação de habilidades no ano letivo. Se habilitado, é obrigatório que informe os IDs das skills na lista "skill_list"**
 
-| Name            | In     | Type   | Default | Nullable | Description           |
-| :-------------- | :----- | :----- | :------ | :------- | :-------------------- |
-| `Authorization` | header | string | None    | No       | Obtained in **Login** |
-| `fk_term_type` | body | integer | None    | No       | Obtained in **List Term Type** |
-| `fk_term` | body | integer | None    | No       | Obtained in **List Term** |
-| `skill_list` | body | integer | None    | yes       | Obtained in **List Skill Settings** |
+| Name            | In     | Type    | Default | Nullable | Description                         |
+| :-------------- | :----- | :------ | :------ | :------- | :---------------------------------- |
+| `Authorization` | header | string  | None    | No       | Obtained in **Login**               |
+| `fk_term_type`  | body   | integer | None    | No       | Obtained in **List Term Type**      |
+| `fk_term`       | body   | integer | None    | No       | Obtained in **List Term**           |
+| `skill_list`    | body   | integer | None    | yes      | Obtained in **List Skill Settings** |
 
 ### **Request Body**
 
@@ -323,7 +323,7 @@
         "year": "2024/Bi",
         "total_grade": 100.0,
         "average_grade": 70.0,
-        "skill": 1, 
+        "skill": 1,
         "dates": [
             {
                 "fk_term": 1, // primeiro bimestre
@@ -362,7 +362,7 @@
         "year": "2024/Tri",
         "total_grade": 100.0,
         "average_grade": 70.0,
-        "skill": 1, 
+        "skill": 1,
         "dates": [
             {
                 "fk_term": 5, // primeiro trimestre
@@ -395,7 +395,7 @@
         "year": "2024",
         "total_grade": 100.0,
         "average_grade": 70.0,
-        "skill": 1, 
+        "skill": 1,
         "dates": [
             {
                 "fk_term": 8, // primeiro semestre
@@ -485,7 +485,8 @@
 
         ``` json
         {
-            "detail": "Etapa não corresponsdente ao Tipo de Etapa"
+            "detail": "Etapa não corresponsdente ao Tipo de Etapa",
+            "render": 1
         }
         ```
 
@@ -493,7 +494,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
@@ -508,7 +510,8 @@
 
             ```{ .json .no-copy}
             {
-                "detail": string
+                "detail": string,
+                "render": integer
             }
             ```
     === "Error 3"
@@ -523,7 +526,8 @@
 
             ```{ .json .no-copy}
             {
-                "detail": string
+                "detail": string,
+                "render": integer
             }
             ```
     === "Error 4"
@@ -538,7 +542,8 @@
 
             ```{ .json .no-copy}
             {
-                "detail": string
+                "detail": string,
+                "render": integer
             }
             ```
 
@@ -557,7 +562,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -574,7 +579,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -591,7 +596,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -608,7 +613,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -624,9 +629,9 @@
     ### Description
     Rota para a atualização dos dados de um Ano Letivo.
 
-| Name               | In             | Type   | Default | Nullable | Description                           |
-| :----------------- | :------------- | :----- | :------ | :------- | :------------------------------------ |
-| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                 |
+| Name             | In             | Type   | Default | Nullable | Description                        |
+| :--------------- | :------------- | :----- | :------ | :------- | :--------------------------------- |
+| `Authorization`  | header         | string | None    | No       | Obtained in **Login**              |
 | `pk_school_year` | path variables | string | None    | No       | Obtained in **_List School Year_** |
 
 ### **Request Body**
@@ -674,7 +679,7 @@
             }
         ],
         "skill_list": [1,2,3,4]
-        
+
     }
     ```
 
@@ -743,7 +748,7 @@
                 "fk_term": 9            }
         ],
         "skill_list": [1,2,3,4]
-        
+
     }
     ```
 
@@ -821,7 +826,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SchoolYear."
+            "detail": "Não foi possivel encontrar este SchoolYear.",
+            "render": 1
         }
         ```
 
@@ -829,14 +835,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
         {
-            "detail": "A data 2024-08-10 Precisa ser maior que a 2024-08-09"
+            "detail": "A data 2024-08-10 Precisa ser maior que a 2024-08-09",
+            "render": 1
         }
         ```
 
@@ -844,14 +852,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 3"
 
         ``` json
             {
-                "detail": "A soma das etapas não totalizam 100.0"
+                "detail": "A soma das etapas não totalizam 100.0",
+                "render": 1
             }
         ```
 
@@ -859,14 +869,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 4"
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este SchoolYearDate."
+                "detail": "Não foi possivel encontrar este SchoolYearDate.",
+                "render": 1
             }
         ```
 
@@ -874,7 +886,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 5"
@@ -885,7 +898,8 @@
                 "year": [
                     "This field is required."
                 ]
-            }
+            },
+            "render": 0
         }
         ```
 
@@ -893,10 +907,10 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": object
+                    "detail": object,
+                    "render": integer
                 }
             ```
-
 
 ??? danger "500"
 
@@ -913,7 +927,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -930,7 +944,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -948,7 +962,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -966,11 +980,10 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
-
 
 ---
 
@@ -983,9 +996,9 @@
     ### Description
     Rota para a atualização de status de um Ano Letivo.
 
-| Name               | In             | Type   | Default | Nullable | Description                           |
-| :----------------- | :------------- | :----- | :------ | :------- | :------------------------------------ |
-| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                 |
+| Name             | In             | Type   | Default | Nullable | Description                        |
+| :--------------- | :------------- | :----- | :------ | :------- | :--------------------------------- |
+| `Authorization`  | header         | string | None    | No       | Obtained in **Login**              |
 | `pk_school_year` | path variables | string | None    | No       | Obtained in **_List School Year_** |
 
 ### **Request Body**
@@ -1032,7 +1045,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este SchoolYear."
+                "detail": "Não foi possivel encontrar este SchoolYear.",
+                "render": 1
             }
         ```
 
@@ -1040,7 +1054,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -1059,7 +1074,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -1075,16 +1090,14 @@
     ### Description
     Rota para excluir um Ano Letivo.
 
-| Name               | In             | Type   | Default | Nullable | Description                           |
-| :----------------- | :------------- | :----- | :------ | :------- | :------------------------------------ |
-| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                 |
+| Name             | In             | Type   | Default | Nullable | Description                        |
+| :--------------- | :------------- | :----- | :------ | :------- | :--------------------------------- |
+| `Authorization`  | header         | string | None    | No       | Obtained in **Login**              |
 | `pk_school_year` | path variables | string | None    | No       | Obtained in **_List School Year_** |
 
 ### **Response Body**
 
 !!! success "204 No Content"
-
-
 
 ??? warning "400"
 
@@ -1100,7 +1113,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -1119,7 +1133,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```

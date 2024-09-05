@@ -59,7 +59,8 @@
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SubjectArea."
+            "detail": "Não foi possivel encontrar este SubjectArea.",
+            "render": 1
         }
         ```
 
@@ -67,7 +68,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -87,7 +89,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -171,7 +173,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -256,7 +258,8 @@
 
         ``` json
         {
-            "detail": "Informe o nome da Area do Conhecimento"
+            "detail": "Informe o nome da Area do Conhecimento",
+            "render": 1
         }
         ```
 
@@ -264,7 +267,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -370,7 +374,8 @@
 
         ``` json
         {
-            "detail": "Informe o nome da Area do Conhecimento"
+            "detail": "Informe o nome da Area do Conhecimento",
+            "render": 1
         }
         ```
 
@@ -378,14 +383,16 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
     === "Error 2"
 
         ``` json
         {
-            "detail": "Não foi possivel encontrar este SubjectArea."
+            "detail": "Não foi possivel encontrar este SubjectArea.",
+            "render": 1
         }
         ```
 
@@ -393,7 +400,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -414,7 +422,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -480,7 +488,8 @@
 
         ``` json
             {
-                "detail": "Não foi possivel encontrar este SubjectArea."
+                "detail": "Não foi possivel encontrar este SubjectArea.",
+                "render": 1
             }
         ```
 
@@ -488,7 +497,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -507,7 +517,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
@@ -547,7 +557,8 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
+                    "render": integer
                 }
             ```
 
@@ -566,7 +577,7 @@
 
             ```{ .json .no-copy}
                 {
-                    "detail": string
+                    "detail": string,
                     "error": string
                 }
             ```
