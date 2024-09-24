@@ -139,23 +139,6 @@
                     "render": integer
                 }
             ```
-    === "Error 2"
-
-        ``` json
-        {
-            "detail": "Não foi possivel encontrar esta Turma",
-            "render": 1
-        }
-        ```
-
-        ??? info "Schema"
-
-            ```{ .json .no-copy}
-                {
-                    "detail": string,
-                    "render": integer
-                }
-            ```
 
 
 ??? danger "500"
@@ -217,7 +200,7 @@
 
 **Update Subejct Grade**
 
-## **<element class="http-put">PUT<element>** - /subjectgrade/<element class="path-put">pk_class_setting</element>/<element class="path-put">fk_pedagogical</element>/<element class="path-put">fk_term</element>/
+## **<element class="http-put">PUT<element>** - /subjectgrade/<element class="path-put">pk_class_setting</element>/<element class="path-put">fk_pedagogical</element>/<element class="path-put">fk_term</element>/update/
 
 ??? note "Description"
 
