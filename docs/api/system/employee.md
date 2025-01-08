@@ -256,7 +256,6 @@
     {
         "password": "123",
         "cpf":"02353336035",
-        "fk_campus": 1,
         "username": "Sargento 3",
         "phone": "54992358847",
         "email": "coordenador@atitus.com",
@@ -278,7 +277,6 @@
     {
     "password": string,
     "cpf": string,
-    "fk_campus": integer,
     "username": string,
     "phone": string,
     "email": string,
@@ -482,7 +480,6 @@
     ``` json
     {
         "cpf":"02353336035",
-        "fk_campus": 1,
         "username": "Professor 3",
         "phone": "54992358847",
         "email": "professor@professor.com",
@@ -503,7 +500,6 @@
     ```json
     {
     "cpf": string,
-    "fk_campus": integer,
     "username": string,
     "phone": string,
     "email": string,

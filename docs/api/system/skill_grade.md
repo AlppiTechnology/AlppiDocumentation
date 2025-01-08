@@ -31,7 +31,14 @@
                 "editable": true,
                 "term_grade": 30.0,
                 "skill": 1,
-                "grades": [
+                "skill_names":[
+                {
+                    "pk_school_year_skill": 1,
+                    "fk_skill_setting": 10,
+                    "label_name": "Habilidade 1",
+                    "description": "Descrição da habilidade "
+                }],
+                "skill_grades": [
                     {
                         "pk_skill_grade": 1,
                         "fk_student_user": 23,
@@ -54,7 +61,14 @@
                 "editable": boolean, // parametro para sinalizar se as notas desta Etapa estão disponiveis para edição
                 "term_grade": integer, // Nota maxima suportada nesta etapa
                 "skill": integer, // Identificador se esta habitado a criação de notas de Habilidades (Rota Skill Grade)
-                "grades": [
+                "skill_names":[
+                {
+                    "pk_school_year_skill": integer,
+                    "fk_skill_setting": integer,
+                    "label_name": string,
+                    "description": string
+                }],
+                "skill_grades": [
                     {
                         "pk_skill_grade": integer,
                         "fk_student_user": integer,
@@ -225,7 +239,7 @@
     ``` json
         {
             "term_grade": 30.0,
-            "grades": [
+            "skill_grades": [
                 {
                     "pk_skill_grade": 1,
                     "fk_student_user": 23,
@@ -244,7 +258,7 @@
         ```{ .json .no-copy}
             {
                 "term_grade": number,
-                "grades": [
+                "skill_grades": [
                     {
                         "pk_subject_grade": integer,
                         "fk_student_user": integer,

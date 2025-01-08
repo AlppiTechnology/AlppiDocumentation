@@ -44,7 +44,7 @@
             "results": [
                 {
                     "pk_pedagogical_setting": 7,
-                    "status": 1,
+                    "class_status": 1,
                     "pk_class_setting": 3,
                     "name": "Teste",
                     "school_grade_name": "1-semestre",
@@ -69,7 +69,7 @@
             "count": integer,
             "results": array of objects {
                 "pk_event": integer,
-                "status": integer, // 1-Active / 0-Inactive
+                "class_status": integer, // 1-Active / 0-Inactive
                 "event_name": string,
                 "event_date": string, // Date in YYYY-MM-DD format
                 "event_location": string,

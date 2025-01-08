@@ -249,7 +249,6 @@
     {
         "password": "123",
         "cpf":"02353336035",
-        "fk_campus": 1,
         "username": "Aluno 18",
         "phone": "54992358847",
         "email": "patrick@piccini.com",
@@ -266,7 +265,6 @@
     {
         "password": string,
         "cpf": string,
-        "fk_campus": integer,
         "username": string,
         "phone": string,
         "email": string,
@@ -465,7 +463,6 @@
         "pk_user": 22,
         "username": "Aluno 19",
         "cpf": "02353336035",
-        "fk_campus": 1,
         "phone": "54992358847",
         "email": "patrick@piccini.com",
         "fk_city": 4911,
@@ -483,7 +480,6 @@
         "pk_user": integer,
         "username": string,
         "cpf": string,
-        "fk_campus": integer,
         "phone": string,
         "email": string,
         "fk_city": integer,
