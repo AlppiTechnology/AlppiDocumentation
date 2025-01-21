@@ -41,7 +41,7 @@ A Rotas Colégio Tiradentes oferece acesso às funcionalidades relacionadas as f
 
 **Recursos:**
 
-- [Introdução à Rotas de Sistema](/AlppiDocumentation/docs/api/ct_requests/)
+- [Introdução à Rotas de Sistema](/AlppiDocumentation/api/ct_requests/)
 - [Referência de Endpoints](/AlppiDocumentation/api/ct_requests/internal_note.md)
 
 
