@@ -33,6 +33,7 @@ nav:
           - api/system/user_group.md
 
       - Colégio Tiradentes:
+          - api\ct_requests\index.md
           - api\ct_requests\internal_note.md
           - api\ct_requests\internal_note_comment.md
           - api\ct_requests\internal_note_settings.md

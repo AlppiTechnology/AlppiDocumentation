@@ -1,10 +1,10 @@
-# Introdução à API de Sistema
+# Introdução às Rotas de Sistema
 
-A API de Sistema é uma ferramenta poderosa projetada para permitir a integração e o gerenciamento das principais funcionalidades do nosso sistema. Com ela, você pode realizar uma ampla gama de operações essenciais que incluem cadastro de dados, gerenciamento de recursos, análise de informações e criação de gráficos. 
+As Rotas de Sistema é uma ferramenta poderosa projetada para permitir a integração e o gerenciamento das principais funcionalidades do nosso sistema. Com ela, você pode realizar uma ampla gama de operações essenciais que incluem cadastro de dados, gerenciamento de recursos, análise de informações e criação de gráficos. 
 
 ## Visão Geral
 
-A API de Sistema foi desenvolvida para oferecer flexibilidade e controle sobre as principais funções do sistema. Ela é ideal para desenvolvedores que precisam interagir com os dados e funcionalidades de forma programática e eficiente. 
+As Rotas de Sistema foi desenvolvida para oferecer flexibilidade e controle sobre as principais funções do sistema. Ela é ideal para desenvolvedores que precisam interagir com os dados e funcionalidades de forma programática e eficiente. 
 
 ### Principais Funcionalidades
 
@@ -22,14 +22,14 @@ A API de Sistema foi desenvolvida para oferecer flexibilidade e controle sobre a
 
 ## Recursos Adicionais
 
-- Guia de Integração: Um passo a passo sobre como integrar a API de Sistema em sua aplicação.
-- Exemplos de Código: Exemplos práticos de como usar os endpoints da API.
+- Guia de Integração: Um passo a passo sobre como integrar as Rotas de Sistema em sua aplicação.
+- Exemplos de Código: Exemplos práticos de como usar os endpoints das Rotas.
 - Referência Completa de Endpoints:  Detalhamento de todos os endpoints disponíveis.
 
 ## Suporte e Contato
 
-Se você tiver dúvidas ou precisar de assistência com a API de Sistema, nossa equipe de suporte está disponível para ajudar. Não hesite em entrar em contato conosco para obter assistência técnica ou esclarecer qualquer dúvida.
+Se você tiver dúvidas ou precisar de assistência com as Rotas de Sistema, nossa equipe de suporte está disponível para ajudar. Não hesite em entrar em contato conosco para obter assistência técnica ou esclarecer qualquer dúvida.
 
 ---
 
-Explore as funcionalidades da API de Sistema e descubra como ela pode transformar a maneira como você gerencia e analisa seus dados!
+Explore as funcionalidades das Rotas de Sistema e descubra como ela pode transformar a maneira como você gerencia e analisa seus dados!
