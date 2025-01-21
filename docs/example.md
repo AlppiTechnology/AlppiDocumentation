@@ -378,11 +378,11 @@
         ``` json
             {
                 "detail": {
-                    "campus_code": [
-                        "campus with this campus code already exists."
+                    "ct_student_deadline": [
+                        "This field is required."
                     ]
                 },
-                "render": 0
+                "render": 0|
             }
             
         ```
@@ -571,11 +571,11 @@
         ``` json
             {
                 "detail": {
-                    "campus_name": [
+                    "ct_student_deadline": [
                         "This field is required."
                     ]
                 },
-                "render": 0
+                "render": 0|
             }
         ```
 

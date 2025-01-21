@@ -12,6 +12,7 @@ nav:
       - System: 
           - api/system/index.md
           - api/system/campus.md
+          - api/system/campus_settings.md
           - api/system/city.md
           - api/system/class.md
           - api/system/employee.md
@@ -30,6 +31,11 @@ nav:
           - api/system/term.md
           - api/system/term_type.md
           - api/system/user_group.md
+
+      - Colégio Tiradentes:
+          - api\ct_requests\internal_note.md
+          - api\ct_requests\internal_note_comment.md
+          - api\ct_requests\internal_note_settings.md
     
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE

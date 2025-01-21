@@ -912,6 +912,24 @@
                 }
             ```
 
+    === "Error 6"
+
+        ``` json
+            {
+                "detail": "Não é possível ativar este ano letivo, pois já existe outro ativo. Por favor, desative o ano letivo atual para poder ativar o novo.",
+                "render": 1 
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
 ??? danger "500"
 
     === "Error 1"
@@ -985,6 +1003,23 @@
                 }
             ```
 
+    === "Error 5"
+
+        ``` json
+            {
+                "detail": "Ocorreu um erro ao desativar o ano letivo 22",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "error": string
+                }
+            ```
 ---
 
 **Change Status School Year**
