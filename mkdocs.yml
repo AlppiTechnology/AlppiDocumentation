@@ -42,7 +42,10 @@ nav:
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
       - Version 1.0.0:
-        - release-notes/v1/v1.0.0.md
+        - release-notes/v1/v1.0.4.md
+        - release-notes/v1/v1.0.3.md
+        - release-notes/v1/v1.0.2.md
+        - release-notes/v1/v1.0.1.md
 
 
 
