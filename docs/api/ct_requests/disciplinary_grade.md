@@ -108,7 +108,7 @@
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
 | `Authorization`   | header | string  | None     | No | Obtained in **Login** |
-| `pk_dg`| path variables| string | None | No | Obtained in **_List Disciplinary Grade_**|
+| `pk_dg`| path variables| string | None | No | Primary Key of  Disciplinary Grade. Obtained in **_List Disciplinary Grade_**|
 
 
 ### **Request Body**

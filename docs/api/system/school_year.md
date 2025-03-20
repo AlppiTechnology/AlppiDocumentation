@@ -295,6 +295,113 @@
 
 ---
 
+
+**List School Year Info**
+
+## **<element class="http-get">GET<element>** - /schoolyear/listinfo/
+
+??? note "Description"
+
+    ### Description
+    Lista todos os Anos Letivos cadastrados no sistema
+
+| Name            | In          | Type   | Default | Nullable | Description           |
+| :-------------- | :---------- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header      | string | None    | No       | Obtained in **Login** |
+| `page`          | query param | string | 1       | Yes      |                       |
+| `page_size`     | query param | string | 30      | Yes      |                       |
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "navigation": {
+                "next": "http://alppi/sys/api/v1/schoolyear/list/?page=3&page_size=20", // link para proxima pagina
+                "previous": "http://alppi/sys/api/v1/schoolyear/list/?page=1&page_size=10" // link para pagina anterior
+            },
+            "next": 3, // numero da proxima pagina
+            "previous": 1, // numero na pagina anterior
+            "count": 1, // quantidade encontrata
+            "results": [
+                {
+                    "pk_school_year": 3,
+                    "year": "2024",
+                    "total_grade": 100.0,
+                    "average_grade": 70.0,
+                    "status": 1,
+                    "menor_data_init": "2024-06-02",
+                    "maior_data_final": "2024-09-30",
+                    "school_year_date": [
+                        {
+                            "fk_term": 1,
+                            "init_date": "2024-11-01",
+                            "final_date": "2024-11-09",
+                            "grade": 20.0
+                        }...
+                    ]
+                }
+            ]
+            }
+        ```
+
+    ??? info "Schema"
+
+        ```{ .json .no-copy}
+        {
+        "navigation": {
+            "next": string,
+            "previous": string
+        },
+        "next": integer,
+        "previous": integer,
+        "count": integer,
+        "results": array of objects {
+            "pk_school_year": integer,
+            "year": string,
+            "total_grade": number,
+            "average_grade": number,
+            "status": integer, // 1-True / 0-False
+            "menor_data_init": string,
+            "maior_data_final": string,
+            "school_year_date": [
+                {
+                    "fk_term": integer,
+                    "init_date": "string,
+                    "final_date": string,
+                    "grade": floating
+                }...
+            ]
+        }
+        }
+
+        ```
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao listar todos os SchoolYearInfo.",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "error": string
+                }
+            ```
+
+---
+
 **Create School Year**
 
 ## **<element class="http-post">POST<element>** - /schoolyear/create/
