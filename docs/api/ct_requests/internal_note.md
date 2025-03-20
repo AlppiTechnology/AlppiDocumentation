@@ -6,9 +6,8 @@
 
 ## **<element class="http-get">GET<element>** - /internal_note/<element class="path-get">pk_internal_note</element>/
 
-
 ??? note "Description"
-    
+
     ### Description
     Captura as informações detalhadas de uma notificação interna.
 
@@ -26,15 +25,14 @@
 
     O campo `active_fields` contem o nome dos campos que o usuário está habilitado a editar.
 
-    O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal. 
+    O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal.
 
     O `workflow` é o fluxo de movimentações de status a Nota Internal
 
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header | string | None | No | Obtained in **Login** |
-| `pk_internal_note`| path variables| string | None | No | Obtained in **_List Internal Note_**|
-
+| Name               | In             | Type   | Default | Nullable | Description                          |
+| :----------------- | :------------- | :----- | :------ | :------- | :----------------------------------- |
+| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                |
+| `pk_internal_note` | path variables | string | None    | No       | Obtained in **_List Internal Note_** |
 
 ### **Response Body**
 
@@ -168,7 +166,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
             {
                     "results": {
@@ -234,7 +232,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ``` { .json .no-copy}
                 {
                     "detail": string,
@@ -254,7 +252,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -272,7 +270,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -290,7 +288,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -309,7 +307,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -320,22 +318,19 @@
 ---
 
 **List Internal Note**
+
 ## **<element class="http-get">GET<element>** - /internal_note/list/
 
-
 ??? note "Description"
-    
+
     ### Description
     Lista todos as notas internas do campus
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header | string | None | No | Obtained in **Login** |
-| `page`   | query param |string | 1 | Yes | |
-| `page_size`   | query param |string | 30 | Yes | |
-
-
+| Name            | In          | Type   | Default | Nullable | Description           |
+| :-------------- | :---------- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header      | string | None    | No       | Obtained in **Login** |
+| `page`          | query param | string | 1       | Yes      |                       |
+| `page_size`     | query param | string | 30      | Yes      |                       |
 
 ### **Response Body**
 
@@ -367,7 +362,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
         {
             "navigation": {
@@ -387,7 +382,7 @@
                     "updated": string,
                     "status": integer
                 }
-                
+
             ]
         }
         ```
@@ -404,7 +399,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -415,12 +410,11 @@
 ---
 
 **Create Internal Note**
+
 ## **<element class="http-post">POST<element>** - /internal_note/create/
 
-
-
 ??? note "Description"
-    
+
     ### Description
     Rota para criação de uma nota internal com status 1 do workflow
 
@@ -438,49 +432,37 @@
 
     O campo `active_fields` contem o nome dos campos que o usuário está habilitado a editar.
 
-    O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal. 
+    O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal.
 
     O `workflow` é o fluxo de movimentações de status a Nota Internal
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header | string | None | No | Obtained in **Login** |
-
-
+| Name            | In     | Type   | Default | Nullable | Description           |
+| :-------------- | :----- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header | string | None    | No       | Obtained in **Login** |
 
 ### **Request Body**
-
 
 === "application/json"
 
     ``` json
-    {
-        "title":"Titulo da Ocorrência LOCAL",
-        "ct_single_attach":"0001.0002", // Anexo unico
-        "ct_deadline":"2024-06-30",
-        "ct_student_deadline":"2024-06-28",
-        "ct_cal_statement":0, // opção "Parecer do CAL"
-        "ct_cmdt_statement":0, // opção "Parecer do CMDT"
-        "ct_cmdt_answer":0,
-        "regulaments":["0001.0001","0002.0002"],
-        "students":[
-            21,22,23
-        ]
-    }
+        {
+            "title":"Titulo da Ocorrência LOCAL",
+            "ct_single_attach":"0001.0002", // Anexo unico
+            "ct_deadline":"2024-06-30",
+            "ct_student_deadline":"2024-06-28",
+            "students":[
+                21,22,23
+            ]
+        }
     ```
-??? info "Body Schema"
-    
+    ??? info "Body Schema"
+
     ```{ .json .no-copy}
         {
             "title": string,
             "ct_single_attach": string,
             "ct_deadline": string,
             "ct_student_deadline": string,
-            "ct_cal_statement": integer,
-            "ct_cmdt_statement": integer,
-            "ct_cmdt_answer": integer,
-            "regulaments": array of strings,
             "students": array of integers
         }
 
@@ -514,7 +496,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
         {
             "results": {
@@ -548,7 +530,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -566,7 +548,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -585,11 +567,11 @@
                 },
                 "render": 0|
             }
-            
+
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": object,
@@ -609,7 +591,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -620,15 +602,13 @@
 ---
 
 **Update Internal Note**
+
 ## **<element class="http-put">PUT<element>** - /internal_note/<element class="path-put">pk_internal_note</element>/update/
 
-
-
-
 ??? note "Description"
-    
+
     ### Description
-    Rota para a atualização dos dados de uma internal note 
+    Rota para a atualização dos dados de uma internal note
 
     *OBS:* É obrigatório segir o fluxo do workflow para as edições e os actives_fields.
 
@@ -646,20 +626,16 @@
 
     O campo `active_fields` contem o nome dos campos que o usuário está habilitado a editar.
 
-    O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal. 
+    O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal.
 
     O `workflow` é o fluxo de movimentações de status a Nota Internal
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header | string | None | No | Obtained in **Login** |
-| `pk_internal_note`| path variables| string | None | No | Obtained in **_List Internal Note_**|
-
-
+| Name               | In             | Type   | Default | Nullable | Description                          |
+| :----------------- | :------------- | :----- | :------ | :------- | :----------------------------------- |
+| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                |
+| `pk_internal_note` | path variables | string | None    | No       | Obtained in **_List Internal Note_** |
 
 ### **Request Body**
-
 
 === "application/json"
 
@@ -689,8 +665,9 @@
         }
 
     ```
+
 ??? info "Body Schema"
-    
+
     ```json
     {
         "title": string,
@@ -739,7 +716,7 @@
         ```
 
     ??? info "Schema"
-    
+
         ```json
         {
             "results":{
@@ -773,7 +750,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -790,7 +767,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -808,7 +785,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -826,7 +803,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -844,7 +821,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -862,7 +839,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -880,7 +857,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -902,7 +879,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": object,
@@ -922,7 +899,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -933,28 +910,24 @@
 ---
 
 **Delete Internal Note**
+
 ## **<element class="http-del">DELL<element>** - /internal_note/<element class="path-del">pk_internal_note</element>/delete/
 
-
-
 ??? note "Description"
-    
+
     ### Description
     A rota de login é fundamental
 
     Deletar uma nota interna (apenas Super Usuário)
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header |string | None | No | Obtained in **Login** |
-| `pk_internal_note`| path variables| string | None | No | Obtained in **_List Internal Note_**|
-
+| Name               | In             | Type   | Default | Nullable | Description                          |
+| :----------------- | :------------- | :----- | :------ | :------- | :----------------------------------- |
+| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                |
+| `pk_internal_note` | path variables | string | None    | No       | Obtained in **_List Internal Note_** |
 
 ### **Response Body**
 
 !!! success "204"
-
 
 ??? warning "400"
 
@@ -968,7 +941,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -988,7 +961,7 @@
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -997,6 +970,3 @@
             ```
 
 ---
-
-
-
