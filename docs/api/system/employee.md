@@ -233,6 +233,231 @@
 
 ---
 
+
+**Get Employee File Template**
+
+---
+
+## **<element class="http-get">GET<element>** - /empoyee/gettemplate/
+
+??? note "Description"
+
+    ### Description
+    Baixa o arquivo de template para criação em massa de usuarios
+
+| Name            | In             | Type   | Default | Nullable | Description                     |
+| :-------------- | :------------- | :----- | :------ | :------- | :------------------------------ |
+| `Authorization` | header         | string | None    | No       | Obtained in **Login**           |
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
+        ```
+        Arquivo cadastro-employee.xlsx
+        ```
+
+    ??? info "Schema"
+
+        ```{ .json .no-copy}
+        N/A
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Arquivo não encontrado",
+                "render": 0
+            }
+        ```
+
+        ??? info "Schema"
+
+            ``` { .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao buscar arquivo para Download",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "error": string
+                }
+            ```
+
+---
+
+
+
+**Upload EmployeeFile Template**
+
+## **<element class="http-post">POST<element>** - /empoyee/uploadfile/
+
+??? note "Description"
+
+    ### Description
+    Rota para criação de colaboradores em massa.
+
+| Name            | In     | Type    | Default | Nullable | Description               |
+| :-------------- | :----- | :------ | :------ | :------- | :------------------------ |
+| `Authorization` | header | string  | None    | No       | Obtained in **Login**     |
+
+### **Request Body**
+
+=== "multipart/form-data"
+
+    ``` 
+    File Template com campos preenchidos
+    ```
+
+??? info "Body Schema"
+
+    ```{ .form-data .no-copy}
+    File Template
+    ```
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "results": "Criados X usuários."
+        }
+        ```
+
+    ??? info "Schema"
+
+        ```{ .json .no-copy}
+        {
+            "results": string
+        }
+
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "CNPJ-CPF invalido",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail": "Numero de registration ja cadastrada!",
+                "render": 1
+            }
+
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    === "Error 3"
+
+        ``` json
+            {
+                "detail": "Erro nas linhas do arquivo: Linha X: Campos faltantes: X,Y,Z",
+                "render": 1
+            }
+
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    === "Error 4"
+
+        ``` json
+            {
+                "detail": {
+                    "username": [
+                        "This field is required."
+                    ]
+                },
+                "render": 0
+            }
+
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": object,
+                    "render": integer
+                }
+            ```
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao criar colaboradores em massa.",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "error": string
+                }
+            ```
+
+---
+
 **Create Employee**
 
 ## **<element class="http-post">POST<element>** - /empoyee/create/
