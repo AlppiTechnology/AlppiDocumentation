@@ -11,6 +11,8 @@
     A rota de login é fundamental para autenticar o usuário no sistema, garantindo que ele tenha acesso apenas aos módulos que a instituição associada está autorizada a utilizar e visualizar no frontend. Durante o processo de login, dois tokens JWT são gerados e retornados na resposta:
 
     **_user_access:_** Este token concede ao usuário a permissão para acessar o sistema, encapsulando informações essenciais, como ID do usuário, nome, status, e o grupo ao qual ele pertence.
+    
+    - obs: **_email_auth:_** Informar se está configurado as credenciais de email para envio de email
 
     **_system_modules:_** Este token define quais módulos do sistema estão disponíveis para o usuário, com base nas permissões concedidas à instituição.
 
@@ -25,6 +27,7 @@
     "status": true,
     "campus_code": 1,
     "pk_campus": 1,
+    "email_auth": true,
     "ip_adress": "131.221.12.242",
     "group": "superuser",
     "current_school_year": 3,

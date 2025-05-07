@@ -9,6 +9,8 @@ nav:
       - Authentication:
         - api/authentication/index.md
         - Login: api/authentication/login.md
+        - Reset Password: api/authentication/reset_password.md
+
       - System: 
           - api/system/index.md
           - api/system/campus.md
@@ -41,11 +43,16 @@ nav:
     
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
-      - Version 1.0.0:
-        - release-notes/v1/v1.0.4.md
-        - release-notes/v1/v1.0.3.md
-        - release-notes/v1/v1.0.2.md
-        - release-notes/v1/v1.0.1.md
+      - System:
+        - Version 1.0.0:
+          - release-notes/system/v1/v1.0.4.md
+          - release-notes/system/v1/v1.0.3.md
+          - release-notes/system/v1/v1.0.2.md
+          - release-notes/system/v1/v1.0.1.md
+      - Authentication:
+        - Version 1.0.0:
+          - release-notes/authentication/v1/v1.0.1.md
+
 
 
 

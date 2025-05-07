@@ -26,7 +26,12 @@
 
     ``` json
     {
-        "password": "sua_senha",
+        "password": "senha_padrão_dos_usuario_cadastrados",
+        "email_password": "Senha_do_email",
+        "email_user": "email@gmail.com",
+        "smpt_host": "smtp.gmail.com",
+        "smpt_port": "587",
+        "use_tls": true
     }
     ```
 ??? info "Body Schema"
@@ -34,6 +39,11 @@
     ```json
     {
         "password": string,
+        "email_password": string,
+        "email_user": string,
+        "smpt_host": string,
+        "smpt_port": string,
+        "use_tls": boolean
     }
     ```
 

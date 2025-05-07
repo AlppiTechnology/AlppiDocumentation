@@ -6,12 +6,14 @@
     --color-http-get__bg: #00fc082b;
     --color-http-post__bg: #ff99002d;
     --color-http-put__bg: #0084ff2b;
+    --color-http-patch__bg: #9a52ff8f;
     --color-http-del__bg: #ff00002e;
 
 
     --color-path-get: #00cc07;;
     --color-path-post: #ff9900b3;
     --color-path-put: #0084ffb5;
+    --color-path-patch: #6d3ab3;
     --color-path-del: #ff0000bd;
 
 }
@@ -53,6 +55,19 @@
     margin-right: .3em;
 }
 
+.http-patch {
+    
+    background-color: var(--color-http-patch__bg);
+    
+    border: .05rem solid var(--color-http-patch);
+    
+    border-radius: .3em;
+    
+    padding: .1rem .9rem;
+    margin-right: .3em;
+}
+
+
 .http-del {
     
     background-color: var(--color-http-del__bg);
@@ -77,6 +92,11 @@
 
 .path-put {
     color: var(--color-path-put);
+    text-decoration: underline;
+}
+
+.path-patch {
+    color: var(--color-path-patch);
     text-decoration: underline;
 }
 
