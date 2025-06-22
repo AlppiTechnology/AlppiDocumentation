@@ -42,126 +42,110 @@
 
         ``` json
             {
-                "results": {
-                    "pk_ct_internal_note": 1,
-                    "title": "Titulo da Ocorrência",
-                    "fk_reporter": 1,
-                    "username": "Patrick Berlatto Piccini",
-                    "fk_campus": 1,
-                    "ct_single_attach": "003.015",
-                    "ct_deadline": "2024-06-30",
-                    "ct_student_deadline": "2024-06-28",
-                    "ct_cal_statement": 3,
-                    "ct_cmdt_statement": 0,
-                    "ct_cmdt_answer": 0,
-                    "created": "2024-11-16T18:58:04",
-                    "updated": "2024-12-04T00:28:42",
-                    "status": 4,
-                    "active_fields": [
-                        "ct_single_attach",
-                        "ct_deadline,",
-                        "ct_student_deadline",
-                        "regulaments",
-                        "students",
-                        "comments",
-                        "status"
-                    ],
-                    "regulaments": [
-                        "004.001.001",
-                        "004.001.002",
-                        "004.001.003",
-                        "004.001.004"
-                    ],
-                    "students": [
+                "pk_internal_note": 1,
+                "ci_number": "00001",
+                "fk_reporter": 1,
+                "username": "Patrick Berlatto Piccini",
+                "fk_campus": 1,
+                "deadline": "2025-06-30",
+                "student_deadline": "2025-06-28",
+                "fk_student": 20,
+                "student_name": "Aluno 1",
+                "statement": 0,
+                "custom_grade": null,
+                "created": "2025-06-13T00:49:36",
+                "updated": "2025-06-17T23:52:40",
+                "status": 4,
+                "attachments": [
+                    {
+                        "pk_student_single_attach": 2,
+                        "fk_internal_note_id": 1,
+                        "single_attach": "0005.0002"
+                    }
+                ],
+                "comments": [
+                    {
+                        "pk_internal_note_comment": 1,
+                        "fk_internal_note_id": 1,
+                        "fk_user_id": 1,
+                        "date": "2025-06-13T03:54:35.890824Z",
+                        "comment": "comment save",
+                        "group": "superuser",
+                        "username": "Patrick Berlatto Piccini"
+                    }
+                ],
+                "regulaments": [
+                    {
+                        "pk_student_regulament": 3,
+                        "fk_internal_note_id": 1,
+                        "regulament": "0004.0000"
+                    }
+                ],
+                "active_fields": [
+                    "attachments",
+                    "deadline,",
+                    "student_deadline",
+                    "regulaments",
+                    "statement",
+                    "comments",
+                    "status",
+                    "custon_grade"
+                ],
+                "workflows": {
+                    "1": [
                         {
-                            "pk_ct_student_internal_note": 7,
-                            "fk_student": 20,
-                            "username": "Aluno 1",
-                            "registration": "00011"
-                        },
-                        {
-                            "pk_ct_student_internal_note": 20,
-                            "fk_student": 21,
-                            "username": "Aluno 2",
-                            "registration": "00012"
+                            "name": "Mover para justificar",
+                            "fromStatusReference": "1",
+                            "fromStatisReferenceName": "Criado",
+                            "toStatusReference": "2",
+                            "toStatusReferenceName": "Para Justificar"
                         }
                     ],
-                    "comments": [
+                    "2": [
                         {
-                            "pk_ct_comment": 1,
-                            "fk_user": 1,
-                            "date": "2024-11-16T21:58:37.321015Z",
-                            "comment": "TESTE COMENTARIO",
-                            "username": "Patrick Berlatto Piccini",
-                            "registration": "00001",
-                            "group": "superuser"
-                        },
-                        {
-                            "pk_ct_comment": 2,
-                            "fk_user": 5,
-                            "date": "2024-12-12T03:25:42.102104Z",
-                            "comment": "UPDATE 2",
-                            "username": "Sargento 3",
-                            "registration": "00005",
-                            "group": "avaliador"
-                        },
+                            "name": "Mover para analize",
+                            "fromStatusReference": "2",
+                            "fromStatisReferenceName": "Para Justificar",
+                            "toStatusReference": "3",
+                            "toStatusReferenceName": "Analize de justificativa"
+                        }
                     ],
-                    "workflows": {
-                        "1": [
-                            {
-                                "name": "Mover para justificar",
-                                "fromStatusReference": "1",
-                                "fromStatisReferenceName": "Criado",
-                                "toStatusReference": "2",
-                                "toStatusReferenceName": "Para Justificar"
-                            }
-                        ],
-                        "2": [
-                            {
-                                "name": "Mover para analize",
-                                "fromStatusReference": "2",
-                                "fromStatisReferenceName": "Para Justificar",
-                                "toStatusReference": "3",
-                                "toStatusReferenceName": "Analize de justificativa"
-                            }
-                        ],
-                        "3": [
-                            {
-                                "name": "Mover para validação",
-                                "fromStatusReference": "3",
-                                "fromStatisReferenceName": "Analize de justificativa",
-                                "toStatusReference": "4",
-                                "toStatusReferenceName": "Aguardando validação da analize"
-                            }
-                        ],
-                        "4": [
-                            {
-                                "name": "Mover para Concluido",
-                                "fromStatusReference": "4",
-                                "fromStatisReferenceName": "Aguardando validação da analize",
-                                "toStatusReference": "5",
-                                "toStatusReferenceName": "Concluido"
-                            },
-                            {
-                                "name": "Voltar para analize",
-                                "fromStatusReference": "4",
-                                "fromStatisReferenceName": "Criado",
-                                "toStatusReference": "3",
-                                "toStatusReferenceName": "Analize de justificativa"
-                            }
-                        ],
-                        "5": [
-                            {
-                                "name": "Finalizar",
-                                "fromStatusReference": "10004",
-                                "fromStatisReferenceName": "Concluido",
-                                "toStatusReference": null,
-                                "toStatusReferenceName": null
-                            }
-                        ]
-                    }
-                    }
+                    "3": [
+                        {
+                            "name": "Mover para validação",
+                            "fromStatusReference": "3",
+                            "fromStatisReferenceName": "Analize de justificativa",
+                            "toStatusReference": "4",
+                            "toStatusReferenceName": "Aguardando validação da analize"
+                        }
+                    ],
+                    "4": [
+                        {
+                            "name": "Mover para Concluido",
+                            "fromStatusReference": "4",
+                            "fromStatisReferenceName": "Aguardando validação da analize",
+                            "toStatusReference": "5",
+                            "toStatusReferenceName": "Concluido"
+                        },
+                        {
+                            "name": "Voltar para analize",
+                            "fromStatusReference": "4",
+                            "fromStatisReferenceName": "Criado",
+                            "toStatusReference": "3",
+                            "toStatusReferenceName": "Analize de justificativa"
+                        }
+                    ],
+                    "5": [
+                        {
+                            "name": "Finalizar",
+                            "fromStatusReference": "10004",
+                            "fromStatisReferenceName": "Concluido",
+                            "toStatusReference": null,
+                            "toStatusReferenceName": null
+                        }
+                    ]
                 }
+            }
 
         ```
 
@@ -169,54 +153,59 @@
 
         ```{ .json .no-copy}
             {
-                    "results": {
-                        "pk_ct_internal_note": integer,
-                        "title": string,
-                        "fk_reporter": integer,
-                        "username": string,
-                        "fk_campus": integer,
-                        "ct_single_attach": string,
-                        "ct_deadline": string,
-                        "ct_student_deadline": string,
-                        "ct_cal_statement": integer,
-                        "ct_cmdt_statement": integer,
-                        "ct_cmdt_answer": integer,
-                        "created": string,
-                        "updated": string,
-                        "status": integer,
-                        "active_fields": array of strings,
-                        "regulaments": array of strings,
-                        "students": [
-                            {
-                                "pk_ct_student_internal_note": integer,
-                                "fk_student": integer,
-                                "username": string,
-                                "registration": string
-                            }
-                        ],
-                        "comments": [
-                            {
-                                "pk_ct_comment": integer,
-                                "fk_user": integer,
-                                "date": string,
-                                "comment": string,
-                                "username": string,
-                                "registration": string,
-                                "group": string or null
-                            }
-                        ],
-                        "workflows": {
-                            "1": [
-                                {
-                                    "name": string,
-                                    "fromStatusReference": integer,
-                                    "fromStatusReferenceName": string,
-                                    "toStatusReference": integer,
-                                    "toStatusReferenceName": string
-                                }
-                            ],
-                        }
+                "pk_internal_note": integer,
+                "ci_number": string,
+                "fk_reporter": integer,
+                "username": string,
+                "fk_campus": integer,
+                "deadline": string,
+                "student_deadline": string,
+                "fk_student": integer,
+                "student_name": string,
+                "statement": integer,
+                "custom_grade": integer or null,
+                "created": string,
+                "updated": string,
+                "status": integer,
+                "attachments": [
+                    {
+                        "pk_student_single_attach": integer,
+                        "fk_internal_note_id": integer,
+                        "single_attach": string
                     }
+                ],
+                "comments": [
+                    {
+                        "pk_internal_note_comment": integer,
+                        "fk_internal_note_id": integer,
+                        "fk_user_id": integer,
+                        "date": string,
+                        "comment": string,
+                        "group": string,
+                        "username": string
+                    }
+                ],
+                "regulaments": [
+                    {
+                        "pk_student_regulament": integer,
+                        "fk_internal_note_id": integer,
+                        "regulament": string
+                    }
+                ],
+                "active_fields": array of strings,
+                "workflow": {
+                    string: [
+                        {
+                            "name": string,
+                            "fromStatusReference": string,
+                            "fromStatisReferenceName": string,
+                            "toStatusReference": string,
+                            "toStatusReferenceName": string
+                        }
+                    ]
+                }
+            }
+
 
         ```
 
@@ -349,14 +338,16 @@
             "count": 1, // quantidade encontrata
             "results": [
                 {
-                    "pk_ct_internal_note": 1,
-                    "title": "Titulo da Ocorrência",
-                    "ct_deadline": "2024-06-30",
-                    "ct_student_deadline": "2024-06-28",
-                    "created": "2024-11-16T18:58:04",
-                    "updated": "2024-12-04T00:28:42",
+                    "pk_internal_note": 1,
+                    "ci_number": "00001",
+                    "deadline": "2025-06-30",
+                    "student_deadline": "2025-06-28",
+                    "student_name": "Aluno 1",
+                    "student_registration": "00011",
+                    "created": "2025-06-13T00:49:36",
+                    "updated": "2025-06-17T23:52:40",
                     "status": 4
-                },
+                }
             ]
         }
         ```
@@ -374,15 +365,16 @@
             "count": integer
             "results": [
                 {
-                    "pk_ct_internal_note": integer,
-                    "title": string,
-                    "ct_deadline": string,
-                    "ct_student_deadline": string,
+                    "pk_internal_note": integer,
+                    "ci_number": string,
+                    "deadline": string,
+                    "student_deadline": string,
+                    "student_name": string,
+                    "student_registration": string,
                     "created": string,
                     "updated": string,
                     "status": integer
                 }
-
             ]
         }
         ```
@@ -446,77 +438,36 @@
 
     ``` json
         {
-            "title":"Titulo da Ocorrência LOCAL",
-            "ct_single_attach":"0001.0002", // Anexo unico
-            "ct_deadline":"2024-06-30",
-            "ct_student_deadline":"2024-06-28",
-            "students":[
-                21,22,23
-            ]
+            "deadline":"2024-06-30",
+            "student_deadline":"2024-06-28",
+            "students":{
+                "fk_student":21,
+                "single_attach":["0001.0002"],// Anexo unico
+                "regulaments":["0001.0001"]  // regulamentos
+                }
         }
     ```
     ??? info "Body Schema"
 
-    ```{ .json .no-copy}
-        {
-            "title": string,
-            "ct_single_attach": string,
-            "ct_deadline": string,
-            "ct_student_deadline": string,
-            "students": array of integers
-        }
-
-    ```
+        ```{ .json .no-copy}
+                {
+                    "deadline": string,
+                    "student_deadline": string,
+                    "students": [
+                        {
+                            "fk_student": integer,
+                            "single_attach":  array of strings,
+                            "regulaments":  array of strings,
+                        }
+                    ]
+                }
+        ```
 
 ### **Response Body**
 
-??? success "200"
+!!! success "201"
 
-    === "application/json"
 
-        ``` json
-        {
-            "results": {
-                "pk_ct_internal_note": 6,
-                "title": "Titulo da Ocorrência",
-                "fk_reporter": 1,
-                "username": "Patrick Berlatto Piccini",
-                "fk_campus": 1,
-                "ct_single_attach": "0001.0002",
-                "ct_deadline": "2025-06-30",
-                "ct_student_deadline": "2025-06-28",
-                "ct_cal_statement": 0,
-                "ct_cmdt_statement": 0,
-                "ct_cmdt_answer": 0,
-                "created": "2025-01-20T23:53:11",
-                "updated": "2025-01-20T23:53:11",
-                "status": 1
-            }
-        }
-        ```
-
-    ??? info "Schema"
-
-        ```{ .json .no-copy}
-        {
-            "results": {
-                "pk_ct_internal_note": integer,
-                "title": string,
-                "fk_reporter": integer,
-                "username": string,
-                "fk_campus": integer,
-                "ct_single_attach": string,
-                "ct_deadline": string,
-                "ct_student_deadline": string,
-                "ct_cal_statement": integer,
-                "ct_cmdt_statement": integer,
-                "ct_cmdt_answer": integer,
-                "created": string,
-                "updated": string,
-                "status": integer
-            }
-        }
-        ```
 
 ??? warning "400"
 
@@ -641,50 +592,33 @@
 
     ``` json
         {
-            "title": "Titulo da Ocorrência",
-            "username": "Patrick Berlatto Piccini",
-            "fk_campus": 1,
-            "ct_single_attach": "003.015",
-            "ct_deadline": "2025-06-30",
-            "ct_student_deadline": "2025-06-28",
-            "ct_cal_statement": 3,
-            "ct_cmdt_statement": 0,
-            "ct_cmdt_answer": 0,
-            "created": "2025-11-16T18:58:04",
-            "updated": "2025-12-04T00:28:42",
-            "status": 4,
+            "deadline": "2025-06-30",
+            "student_deadline": "2025-06-28",
+            "statement": 0,
+            "status": 5,
+            "custom_grade": null, 
             "regulaments": [
-                "004.001.001",
-                "004.001.002",
-                "004.001.003",
-                "004.001.004"
+                "0004.0000"
             ],
-            "students": [
-                20,22,23,21
+            "attachments": [
+                "0005.0002"
             ]
         }
-
     ```
 
 ??? info "Body Schema"
 
     ```json
     {
-        "title": string,
-        "username": string,
-        "fk_campus": integer,
-        "ct_single_attach": string,
-        "ct_deadline": string,
-        "ct_student_deadline": string,
-        "ct_cal_statement": integer,
-        "ct_cmdt_statement": integer,
-        "ct_cmdt_answer": integer,
-        "created": string,
-        "updated": string,
-        "status": integer,
-        "regulaments": array of strings,
-        "students": array of integers
+    "deadline": string,
+    "student_deadline": string,
+    "statement": integer,
+    "status": integer,
+    "custom_grade": floating or null,
+    "regulaments": array of strings,
+    "attachments": array of strings
     }
+
 
     ```
 
@@ -696,22 +630,11 @@
 
         ``` json
         {
-            "results": {
-                "pk_ct_internal_note": 6,
-                "title": "Titulo da Ocorrência excluir",
-                "fk_reporter": 1,
-                "username": "Patrick Berlatto Piccini",
-                "fk_campus": 1,
-                "ct_single_attach": "0001.0002",
-                "ct_deadline": "2024-06-30",
-                "ct_student_deadline": "2024-06-28",
-                "ct_cal_statement": 0,
-                "ct_cmdt_statement": 0,
-                "ct_cmdt_answer": 0,
-                "created": "2025-01-20T23:53:11",
-                "updated": "2025-01-20T23:53:11",
-                "status": 1
-            }
+            "deadline": "2025-06-30",
+            "student_deadline": "2025-06-28",
+            "statement": 0,
+            "custom_grade": null,
+            "status": 1
         }
         ```
 
@@ -719,23 +642,13 @@
 
         ```json
         {
-            "results":{
-                "pk_ct_internal_note": integer,
-                "title": string,
-                "fk_reporter": integer,
-                "username": string,
-                "fk_campus": integer,
-                "ct_single_attach": string,
-                "ct_deadline": string,
-                "ct_student_deadline": string,
-                "ct_cal_statement": integer,
-                "ct_cmdt_statement": integer,
-                "ct_cmdt_answer": integer,
-                "created": string,
-                "updated": string,
-                "status": integer
-            }
+            "deadline": string,
+            "student_deadline": string,
+            "statement": integer,
+            "custom_grade": integer or null,
+            "status": integer
         }
+
         ```
 
 ??? warning "400"
