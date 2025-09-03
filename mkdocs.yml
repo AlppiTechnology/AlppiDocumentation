@@ -41,6 +41,7 @@ nav:
           - api/ct_requests/internal_note_settings.md
           - api/ct_requests/disciplinary_grade.md
           - api/ct_requests/regulaments.md
+          - api/ct_requests/flow_disciplinary_grade.md
     
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE

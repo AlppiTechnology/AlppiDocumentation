@@ -11,7 +11,7 @@
     ### Description
     Captura as informações detalhadas de uma notificação interna.
 
-    O campo ``ct_single_attach`` é referente a insformação do Anexo Único  onmde consta o iten de advertência ou bonificação relacionado a nota interna.
+    O campo ``ct_disciplinary_offences`` é referente a insformação do Anexo Único  onmde consta o iten de advertência ou bonificação relacionado a nota interna.
 
     O `ct_deadline` é usada para o prazo final da Nota Interna.
 
@@ -53,14 +53,15 @@
                 "student_name": "Aluno 1",
                 "statement": 0,
                 "custom_grade": null,
+                "description": "descrição da CI individual que será mostrado para o estudante",
                 "created": "2025-06-13T00:49:36",
                 "updated": "2025-06-17T23:52:40",
                 "status": 4,
-                "attachments": [
+                "disciplinary_offences": [
                     {
-                        "pk_student_single_attach": 2,
+                        "pk_student_disciplinary_offences": 2,
                         "fk_internal_note_id": 1,
-                        "single_attach": "0005.0002"
+                        "disciplinary_offences": "0005.0002"
                     }
                 ],
                 "comments": [
@@ -82,7 +83,7 @@
                     }
                 ],
                 "active_fields": [
-                    "attachments",
+                    "disciplinary_offences",
                     "deadline,",
                     "student_deadline",
                     "regulaments",
@@ -164,14 +165,15 @@
                 "student_name": string,
                 "statement": integer,
                 "custom_grade": integer or null,
+                "description": string or null,
                 "created": string,
                 "updated": string,
                 "status": integer,
-                "attachments": [
+                "disciplinary_offences": [
                     {
-                        "pk_student_single_attach": integer,
+                        "pk_student_disciplinary_offences": integer,
                         "fk_internal_note_id": integer,
-                        "single_attach": string
+                        "disciplinary_offences": string
                     }
                 ],
                 "comments": [
@@ -320,6 +322,8 @@
 | `Authorization` | header      | string | None    | No       | Obtained in **Login** |
 | `page`          | query param | string | 1       | Yes      |                       |
 | `page_size`     | query param | string | 30      | Yes      |                       |
+| `search`        | query params| string | None    | No       | Filtragem pelo nome de aluno ou Matricula|
+| `ci_number`     | query params| string | None    | No       | Filtragem pelo numero da CI|
 
 ### **Response Body**
 
@@ -371,8 +375,8 @@
                     "student_deadline": string,
                     "student_name": string,
                     "student_registration": string,
-                    "created": string,
-                    "updated": string,
+                    "created":  string, // Data e hora no formato ISO 8601
+                    "updated":  string, // Data e hora no formato ISO 8601
                     "status": integer
                 }
             ]
@@ -410,7 +414,7 @@
     ### Description
     Rota para criação de uma nota internal com status 1 do workflow
 
-    O campo ``ct_single_attach`` é referente a insformação do Anexo Único  onmde consta o iten de advertência ou bonificação relacionado a nota interna.
+    O campo ``ct_disciplinary_offences`` é referente a insformação do Anexo Único  onmde consta o iten de advertência ou bonificação relacionado a nota interna.
 
     O `ct_deadline` é usada para o prazo final da Nota Interna.
 
@@ -442,7 +446,8 @@
             "student_deadline":"2024-06-28",
             "students":{
                 "fk_student":21,
-                "single_attach":["0001.0002"],// Anexo unico
+                "description": "descrição da CI individual que será mostrado para o estudante",
+                "disciplinary_offences":["0001.0002"],// Anexo unico
                 "regulaments":["0001.0001"]  // regulamentos
                 }
         }
@@ -456,7 +461,8 @@
                     "students": [
                         {
                             "fk_student": integer,
-                            "single_attach":  array of strings,
+                            "description": string or null,
+                            "disciplinary_offences":  array of strings,
                             "regulaments":  array of strings,
                         }
                     ]
@@ -512,7 +518,7 @@
         ``` json
             {
                 "detail": {
-                    "ct_single_attach": [
+                    "ct_disciplinary_offences": [
                         "This field is required."
                     ]
                 },
@@ -563,19 +569,19 @@
 
     *OBS:* É obrigatório segir o fluxo do workflow para as edições e os actives_fields.
 
-    O campo ``ct_single_attach`` é referente a insformação do Anexo Único  onmde consta o iten de advertência ou bonificação relacionado a nota interna.
+    O campo ``ct_disciplinary_offences`` é referente a insformação do Anexo Único  onmde consta o iten de advertência ou bonificação relacionado a nota interna.
 
-    O `ct_deadline` é usada para o prazo final da Nota Interna.
+    O `deadline` é usada para o prazo final da Nota Interna.
 
     O `ct_student_deadline` é usada para o prazo final da resposta do aluno a Nota Internal.
 
-    O `ct_cal_statement` é a sugestão do CAL como advertência.
-
-    O `ct_cmdt_statement` é a escolah do COMANDANTE para advertência.
-
-    A `ct_cmdt_answer` é preenchido como 1 ou 0 (True or False) caso o comandante apenas deseja seguir a recomentação do CAL, sem ter nescessidade de preencher os campo anterior.
+    O `statement` é a escolah do COMANDANTE para advertência.
 
     O campo `active_fields` contem o nome dos campos que o usuário está habilitado a editar.
+
+    O `custom_grade` é um nota dinamica que pode ser inseria caso o statemet seja a opção de noda diferente das que já esxiste.
+
+    O `description` é uma descrição da CI que o aluno foi penalizado
 
     O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal.
 
@@ -596,11 +602,12 @@
             "student_deadline": "2025-06-28",
             "statement": 0,
             "status": 5,
-            "custom_grade": null, 
+            "custom_grade": null,
+            "description": "descrição da CI individual que será mostrado para o estudante",
             "regulaments": [
                 "0004.0000"
             ],
-            "attachments": [
+            "disciplinary_offences": [
                 "0005.0002"
             ]
         }
@@ -615,8 +622,9 @@
     "statement": integer,
     "status": integer,
     "custom_grade": floating or null,
+    "description": string or null,
     "regulaments": array of strings,
-    "attachments": array of strings
+    "disciplinary_offences": array of strings
     }
 
 
@@ -821,6 +829,262 @@
             ```
 
 ---
+
+
+## **<element class="http-patch">PUT<element>** - /internal_note/<element class="path-patch">pk_internal_note</element>/partial_update/
+
+??? note "Description"
+
+    ### Description
+    Rota para a atualização dos dados de uma internal note
+
+    *OBS:* É obrigatório segir o fluxo do workflow para as edições e os actives_fields.
+
+    O `ct_deadline` é usada para o prazo final da Nota Interna.
+
+    O `statement` é a escolha do COMANDANTE para advertência.
+
+
+
+    O campo `active_fields` contem o nome dos campos que o usuário está habilitado a editar.
+
+
+| Name               | In             | Type   | Default | Nullable | Description                          |
+| :----------------- | :------------- | :----- | :------ | :------- | :----------------------------------- |
+| `Authorization`    | header         | string | None    | No       | Obtained in **Login**                |
+| `pk_internal_note` | path variables | string | None    | No       | Obtained in **_List Internal Note_** |
+
+### **Request Body**
+
+=== "application/json"
+
+    ``` json
+        {
+            "deadline": "2025-06-30",
+            "student_deadline": "2025-06-28",
+            "statement": 0,
+            "status": 5,
+            "custom_grade": null,
+            "description": "descrição da CI individual que será mostrado para o estudante",
+        }
+    ```
+
+??? info "Body Schema"
+
+    ```json
+    {
+    "deadline": string,
+    "student_deadline": string,
+    "statement": integer,
+    "status": integer,
+    "custom_grade": floating or null,
+    "description": string or null,
+
+    }
+
+
+    ```
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "deadline": "2025-06-30",
+            "student_deadline": "2025-06-28",
+            "statement": 0,
+            "custom_grade": null,
+            "status": 1
+        }
+        ```
+
+    ??? info "Schema"
+
+        ```json
+        {
+            "deadline": string,
+            "student_deadline": string,
+            "statement": integer,
+            "custom_grade": integer or null,
+            "status": integer
+        }
+
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este CTInternalNote",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail": "Não é possovel cadastrar duas vezes o mesmo regulamento. {regulament}",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+    === "Error 3"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar todos os CTRegulament.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+    === "Error 4"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este CTRegulament.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+    === "Error 5"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar todos os CTStudentInternalNote.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+    === "Error 6"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este CTStudentInternalNote.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+    === "Error 7"
+
+        ``` json
+            {
+                "detail": "Não é possovel cadastrar duas vezes o mesmo regulamento. {regulament}",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+    === "Error 8"
+
+        ``` json
+            {
+                "detail": {
+                    "ct_student_deadline": [
+                        "This field is required."
+                    ]
+                },
+                "render": 0|
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": object,
+                    "render": integer
+                }
+            ```
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao editar CTInternalNote",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                    "error": string
+                }
+            ```
+
+---
+
 
 **Delete Internal Note**
 
