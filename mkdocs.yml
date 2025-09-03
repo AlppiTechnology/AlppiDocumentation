@@ -47,6 +47,7 @@ nav:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
       - System:
         - Version 1.0.0:
+          - release-notes/system/v1/v1.0.7.md
           - release-notes/system/v1/v1.0.6.md
           - release-notes/system/v1/v1.0.5.md
           - release-notes/system/v1/v1.0.4.md
