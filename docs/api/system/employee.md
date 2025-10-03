@@ -884,6 +884,123 @@
 
 ---
 
+
+**Update Employee**
+
+## **<element class="http-put">PUT<element>** - /empoyee/change-password/
+
+??? note "Description"
+
+    ### Description
+    Rota para mudar senha do colaborador.
+    
+    É mudado a senha do proprio usuario.
+
+| Name            | In             | Type    | Default | Nullable | Description                     |
+| :-------------- | :------------- | :------ | :------ | :------- | :------------------------------ |
+| `Authorization` | header         | string  | None    | No       | Obtained in **Login**           |
+
+### **Request Body**
+
+=== "application/json"
+
+    ``` json
+    {
+        "old_password" : "EscolaTiradentes@2025",
+        "new_password": "Teste@2025"
+    }
+    ```
+
+??? info "Body Schema"
+
+    ```json
+    {
+        "old_password" : string,
+        "new_password": string
+    }
+    ```
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "results": "Senha atualizada com sucesso."
+        }
+        ```
+
+    ??? info "Schema"
+
+        ```json
+        {
+            "results": string
+        }
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail": "Senha atual incorreta.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao mudar senha do usuario",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "error": string
+                }
+            ```
+
+---
+
+
 **Change Status Employee**
 
 ## **<element class="http-put">PUT<element>** - /empoyee/<element class="path-put">pk_user</element>/changestatus/
