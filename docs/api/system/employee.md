@@ -885,7 +885,7 @@
 ---
 
 
-**Update Employee**
+**Change Passwrod Employee**
 
 ## **<element class="http-put">PUT<element>** - /empoyee/change-password/
 

@@ -860,7 +860,7 @@
 ---
 
 
-**Update Student**
+**Change Passwrod Student**
 
 ## **<element class="http-put">PUT<element>** - /student/change-password/
 
