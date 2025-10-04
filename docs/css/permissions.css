@@ -1,0 +1,75 @@
+:root {
+
+    --collor-superuser: #4deeea;
+    --color-superuser__bg: #4deeeb2e;
+
+    --color-administrator: #ff9900;
+    --color-administrator__bg: #ff99002d;
+
+    --color-coordinator: #ffe100;
+    --color-coordinator__bg: #ffe10031;
+
+    --color-evaluator: #00cc07;
+    --color-evaluator__bg: #00cc0729;
+
+    --color-teacher: #fe00f6;
+    --color-teacher__bg: #fe00f629;
+
+    --color-student: #0084ffb5;
+    --color-student__bg: #0084ff2b;
+
+}
+
+.superuser {
+  background-color: var(--color-superuser__bg);
+  border: .05rem solid var(--collor-superuser);
+  border-radius: .3em;
+  padding: .1rem .5rem;
+  margin-right: .3em;
+  margin-bottom: .3em;
+}
+
+.administrator {
+    
+    background-color: var(--color-administrator__bg);
+    border: .05rem solid var(--color-administrator);
+    border-radius: .3em;
+    padding: .1rem .5rem;
+    margin-right: .3em;
+}
+
+.coordinator {
+    
+    background-color: var(--color-coordinator__bg);
+    border: .05rem solid var(--color-coordinator);
+    border-radius: .3em;
+    padding: .1rem .5rem;
+    margin-right: .3em;
+}
+
+.evaluator {
+    
+    background-color: var(--color-evaluator__bg);
+    border: .05rem solid var(--color-evaluator);
+    border-radius: .3em;
+    padding: .1rem .5rem;
+    margin-right: .3em;
+}
+
+.teacher {
+    
+    background-color: var(--color-teacher__bg);
+    border: .05rem solid var(--color-teacher);
+    border-radius: .3em;
+    padding: .1rem .5rem;
+    margin-right: .3em;
+}
+
+
+.student {
+  background-color: var(--color-student__bg);
+  border: .05rem solid var(--color-student);
+  border-radius: .3em;
+  padding: .1rem .5rem;
+  margin-right: .3em;
+}

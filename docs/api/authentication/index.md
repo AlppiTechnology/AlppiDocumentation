@@ -1,3 +1,6 @@
+---
+icon: material/key-chain
+---
 # Introdução à Rotas de Autenticação
 
 A Rotas de Autenticação é projetada para gerenciar o acesso seguro ao seu sistema, oferecendo funcionalidades essenciais para autenticação de usuários e controle de acesso baseado em CNPJ. Ela permite realizar login, gerar tokens JWT para autorização e consultar módulos liberados para o cliente com base no CNPJ.

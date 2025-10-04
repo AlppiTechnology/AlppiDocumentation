@@ -3,79 +3,56 @@
     --color-http-post: #ff9900;
     --color-http-put: #0084ff;
     --color-http-del: #ff0000;
+    --color-http-patch: #9a52ff;
     --color-http-get__bg: #00fc082b;
     --color-http-post__bg: #ff99002d;
     --color-http-put__bg: #0084ff2b;
-    --color-http-patch__bg: #9a52ff8f;
+    --color-http-patch__bg: #9a52ff35;
     --color-http-del__bg: #ff00002e;
 
-
-    --color-path-get: #00cc07;;
+    --color-path-get: #00cc07;
     --color-path-post: #ff9900b3;
     --color-path-put: #0084ffb5;
-    --color-path-patch: #6d3ab3;
+    --color-path-patch: #6b40a8;
     --color-path-del: #ff0000bd;
-
 }
 
 .http-get {
-    
     background-color: var(--color-http-get__bg);
-    
     border: .05rem solid var(--color-http-get);
-    
     border-radius: .3em;
-    
     padding: .1rem .9rem;
     margin-right: .3em;
 }
 
 .http-post {
-    
     background-color: var(--color-http-post__bg);
-    
     border: .05rem solid var(--color-http-post);
-    
     border-radius: .3em;
-    
     padding: .1rem .9rem;
     margin-right: .3em;
 }
 
-
 .http-put {
-    
     background-color: var(--color-http-put__bg);
-    
     border: .05rem solid var(--color-http-put);
-    
     border-radius: .3em;
-    
     padding: .1rem .9rem;
     margin-right: .3em;
 }
 
 .http-patch {
-    
     background-color: var(--color-http-patch__bg);
-    
     border: .05rem solid var(--color-http-patch);
-    
     border-radius: .3em;
-    
     padding: .1rem .9rem;
     margin-right: .3em;
 }
 
-
 .http-del {
-    
     background-color: var(--color-http-del__bg);
-    
     border: .05rem solid var(--color-http-del);
-    
     border-radius: .3em;
-    
     padding: .1rem .9rem;
     margin-right: .3em;
 }
@@ -103,4 +80,24 @@
 .path-del {
     color: var(--color-path-del);
     text-decoration: underline;
+}
+
+
+@keyframes crecente {
+  0%, 40%, 80%, 100% {
+    transform: scale(1.10);
+  }
+  20%, 60% {
+    transform: scale(1.25);
+  }
+
+}
+.new-alert {
+  animation: crecente 1000ms infinite;
+  color: #ffcc00;
+}
+
+.upd-alert {
+  animation: crecente 1000ms infinite;
+  color: #872bff;
 }

@@ -1,4 +1,7 @@
-# Term Type (Unused)
+---
+status: deprecated
+---
+# Term Type
 
 **Get Term Type**
 

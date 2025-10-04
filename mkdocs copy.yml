@@ -5,46 +5,43 @@ site_name: Alppi Documentation
 nav:
   - Home: index.md
   - APIs: 
-    - api/index.md
-    - Authentication:
-      - api/authentication/index.md 
-      - Routes:
+    - "":
+      - Authentication:
+        - api/authentication/index.md
         - Login: api/authentication/login.md
         - Reset Password: api/authentication/reset_password.md
 
-    - System:
-      - api/system/index.md
-      - Routes:
-        - Campus: api/system/campus.md
-        - Campus Settings: api/system/campus_settings.md
-        - City: api/system/city.md
-        - Class: api/system/class.md
-        - Employee: api/system/employee.md
-        - Pedagogical: api/system/pedagogical.md
-        - School Year: api/system/school_year.md
-        - School Grade: api/system/school_grade.md
-        - School Level: api/system/school_level.md
-        - Shift: api/system/shift.md
-        - Skill Grade: api/system/skill_grade.md
-        - Skill Settings: api/system/skill_settings.md
-        - Student: api/system/student.md
-        - Student Presence: api/system/student_presence.md
-        - Subject: api/system/subject.md
-        - Subject Area: api/system/subject_area.md
-        - Subject Grade: api/system/subject_grade.md
-        - Term: api/system/term.md
-        - Term type: api/system/term_type.md
-        - User Group: api/system/user_group.md
+      - System: 
+          - api/system/index.md
+          - api/system/campus.md
+          - api/system/campus_settings.md
+          - api/system/city.md
+          - api/system/class.md
+          - api/system/employee.md
+          - api/system/pedagogical.md
+          - api/system/school_year.md
+          - api/system/school_grade.md
+          - api/system/school_level.md
+          - api/system/shift.md
+          - api/system/skill_grade.md
+          - api/system/skill_settings.md
+          - api/system/student.md
+          - api/system/student_presence.md
+          - api/system/subject.md
+          - api/system/subject_area.md
+          - api/system/subject_grade.md
+          - api/system/term.md
+          - api/system/term_type.md
+          - api/system/user_group.md
 
-    - Colégio Tiradentes:
-      - api/ct_requests/index.md
-      - Routes:
-        - Internal Note: api/ct_requests/internal_note.md
-        - Internal Note Comment: api/ct_requests/internal_note_comment.md
-        - Internal Note Settings: api/ct_requests/internal_note_settings.md
-        - Disciplinary Grade: api/ct_requests/disciplinary_grade.md
-        - Regulaments: api/ct_requests/regulaments.md
-        - Flow Disciplinary Grade: api/ct_requests/flow_disciplinary_grade.md
+      - Colégio Tiradentes:
+          - api/ct_requests/index.md
+          - api/ct_requests/internal_note.md
+          - api/ct_requests/internal_note_comment.md
+          - api/ct_requests/internal_note_settings.md
+          - api/ct_requests/disciplinary_grade.md
+          - api/ct_requests/regulaments.md
+          - api/ct_requests/flow_disciplinary_grade.md
     
   - Release Notes:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
@@ -126,8 +123,6 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  # favicon: assets/favicon.png
-
 
   icon:
     repo: fontawesome/brands/square-github
@@ -148,7 +143,6 @@ theme:
 
 plugins:
   - search
-  - macros
 
 markdown_extensions:
   - pymdownx.details
@@ -156,20 +150,11 @@ markdown_extensions:
   - admonition
   - pymdownx.tabbed:
       alternate_style: true
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
 
 extra_css:
   - css/crud.css
   - css/permissions.css
 
-extra:
-  status:
-    new: Recently added
-    deprecated: Deprecated
   
 # Copyright
-copyright: Copyright &copy; 2024 - 2025 Alppi Technology
+copyright: Copyright &copy; 2024 - 2024 Alppi Technology

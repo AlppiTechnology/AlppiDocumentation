@@ -1,5 +1,6 @@
 # Bem-vindo ao Portal de Desenvolvedores
 
+
 Este portal foi criado para fornecer todas as informações e ferramentas necessárias para trabalhar com nossas APIs. Aqui você encontrará a documentação completa e as notas de lançamento atualizadas.
 
 ## Rotas Disponíveis

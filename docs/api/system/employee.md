@@ -1,3 +1,6 @@
+---
+status: new
+---
 # Employee
 
 **Get Employee**
@@ -887,7 +890,10 @@
 
 **Change Passwrod Employee**
 
-## **<element class="http-put">PUT<element>** - /empoyee/change-password/
+
+
+## {{ route("PUT", "/empoyee/change-password/", new=True) }}
+
 
 ??? note "Description"
 

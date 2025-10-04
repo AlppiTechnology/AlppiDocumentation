@@ -1,8 +1,7 @@
 # User Authentication
 ## Login Route
 
-## **<element class="http-post">POST<element>** - `/login/`
-
+{{ route("POST", "/login/") }}
 
 
 ??? note "Description"

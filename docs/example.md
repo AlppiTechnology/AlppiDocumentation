@@ -1,5 +1,16 @@
 # Title
 
+
+## {{ route("GET", "/campussettings/{pk_campus}") }}
+
+## {{ route("PUT", "/student/change-password/{teste}", new=True) }}
+
+## {{ route("POST", "/campussettings/create/{teste}") }}
+
+## {{ route("DELETE", "/student/{pk_student}") }}
+
+## {{ route("PATCH", "/student/{pk_student}/status") }}
+
 **Get Campus**
 
 ---

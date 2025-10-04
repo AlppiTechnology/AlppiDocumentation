@@ -4,7 +4,8 @@
 
 ---
 
-## **<element class="http-post">POST<element>** - /request_password_reset/
+
+{{ route("POST", "/request_password_reset/") }}
 
 
 ??? note "Description"

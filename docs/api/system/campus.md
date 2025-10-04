@@ -3,8 +3,7 @@
 
 ---
 
-## **<element class="http-get">GET<element>** - /campus/<element class="path-get">pk_campus</element>/
-
+## {{ route("GET", "/campus/{pk_campus}/")}}
 
 ??? note "Description"
     

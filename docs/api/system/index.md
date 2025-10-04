@@ -1,3 +1,8 @@
+---
+icon: material/webhook
+status: new 
+---
+
 # Introdução às Rotas de Sistema
 
 As Rotas de Sistema é uma ferramenta poderosa projetada para permitir a integração e o gerenciamento das principais funcionalidades do nosso sistema. Com ela, você pode realizar uma ampla gama de operações essenciais que incluem cadastro de dados, gerenciamento de recursos, análise de informações e criação de gráficos. 
