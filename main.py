@@ -29,7 +29,7 @@ def define_env(env):
         # Ícone "novo"
         new_icon = ":material-new-box:{ .new-alert }" if new else ""
 
-        upd_icon = ":simple-localsend:{ .upd-alert }" if upd else ""
+        upd_icon = ":material-star-box:{ .upd-alert }" if upd else ""
 
         # HTML final
         if new_icon:

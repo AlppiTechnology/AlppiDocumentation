@@ -1,0 +1,8 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="5" width="24" height="15" rx="1" ry="1" fill="#e0e0e0"/>
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"
+        font-size="11" font-family="Arial, sans-serif" fill="#000000" font-weight="bold">
+    UPD
+  </text>
+</svg>
+
