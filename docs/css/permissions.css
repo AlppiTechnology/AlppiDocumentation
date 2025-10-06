@@ -20,6 +20,7 @@
 
 }
 
+
 .superuser {
   background-color: var(--color-superuser__bg);
   border: .05rem solid var(--collor-superuser);

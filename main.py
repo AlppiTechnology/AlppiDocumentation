@@ -43,3 +43,72 @@ def define_env(env):
             
 
         return html
+
+
+    @env.macro
+    def superuser():
+        """
+        Tag de Super usuario
+
+        Exemplo:
+            {{ superuser() }}
+        """
+        html = '<span class="superuser">SuperUser</span>'
+        return html
+
+    @env.macro
+    def admin():
+        """
+        Tag de Super usuario
+
+        Exemplo:
+            {{ admin() }}
+        """
+        html = '<span class="administrator">Administrator</span>'
+        return html
+
+    @env.macro
+    def coordinator():
+        """
+        Tag de Super usuario
+
+        Exemplo:
+            {{ coordinator() }}
+        """
+
+        html = '<span class="coordinator">Coordinator</span>'
+        return html
+
+    @env.macro
+    def evaluator():
+        """
+        Tag de Super usuario
+
+        Exemplo:
+            {{ evaluator() }}
+        """
+        html = '<span class="evaluator">Evaluator</span>'
+        return html
+
+    @env.macro
+    def teacher():
+        """
+        Tag de Super usuario
+
+        Exemplo:
+            {{ teacher() }}
+        """
+        html = '<span class="teacher">Teacher</span>'
+        return html
+
+
+    @env.macro
+    def student():
+        """
+        Tag de Super usuario
+
+        Exemplo:
+            {{ student() }}
+        """
+        html = '<span class="student">Student</span> '
+        return html

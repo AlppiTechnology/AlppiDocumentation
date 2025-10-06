@@ -50,6 +50,7 @@ nav:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
       - System:
         - Version 1.0.0:
+          - release-notes/system/v1/v1.0.8.md
           - release-notes/system/v1/v1.0.7.md
           - release-notes/system/v1/v1.0.6.md
           - release-notes/system/v1/v1.0.5.md
@@ -62,7 +63,8 @@ nav:
           - release-notes/authentication/v1/v1.0.1.md
     
   - Permissions:
-    - api/permissions/index.md
+    - api/permissions/route_permissions.md
+    - api/permissions/screen_permissions.md
 
 
 
@@ -81,6 +83,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - content.code.select
+    - content.width.full
     # - content.footnote.tooltips
     # - content.tabs.link
     - content.tooltips
@@ -170,6 +173,7 @@ extra:
   status:
     new: Recently added
     deprecated: Deprecated
+    tag: New tag
   
 # Copyright
 copyright: Copyright &copy; 2024 - 2025 Alppi Technology

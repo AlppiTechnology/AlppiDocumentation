@@ -1,3 +1,6 @@
+---
+icon: material/tooth
+---
 # Introdução às Rotas do Colégio Tiradentes
 
 As rotas do Colégio Tiradentes são recursos exclusivos, destinados apenas ao grupo da instituição. Neste módulo, são oferecidas funcionalidades específicas para solucionar desafios internos, proporcionando maior eficiência e agilidade na automação de processos manuais.
