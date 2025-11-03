@@ -1,6 +1,3 @@
----
-status: new
----
 # Campus Settings
 
 
@@ -10,7 +7,7 @@ status: new
 
 <!-- ## **<element class="http-get">GET<element>** - /campussettings/<element class="path-get">pk_campus</element>/ -->
 
-## {{ route("GET", "/campussettings/{pk_campus}/", upd=True) }}
+## {{ route("GET", "/campussettings/{pk_campus}/") }}
 
 
 ??? note "Description"
@@ -243,7 +240,7 @@ status: new
 
 **Change Passwrod Campus Settings**
 
-## {{ route("PUT", "/campussettings/change-password/", new=True) }}
+## {{ route("PUT", "/campussettings/change-password/") }}
 
 
 ??? note "Description"

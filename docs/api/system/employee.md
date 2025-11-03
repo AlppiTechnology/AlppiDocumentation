@@ -1,6 +1,3 @@
----
-status: new
----
 # Employee
 
 **Get Employee**
@@ -892,7 +889,7 @@ status: new
 
 
 
-## {{ route("PUT", "/empoyee/change-password/", new=True) }}
+## {{ route("PUT", "/empoyee/change-password/") }}
 
 
 ??? note "Description"

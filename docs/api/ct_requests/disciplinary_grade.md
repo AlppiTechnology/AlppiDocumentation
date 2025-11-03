@@ -2,7 +2,7 @@
 
 
 **List Disciplinary Grade**
-## **<element class="http-get">GET<element>** - /cisciplinary_grade/list/
+## **<element class="http-get">GET<element>** - /disciplinary_grade/list/
 
 
 ??? note "Description"
@@ -94,7 +94,7 @@
 
 
 **Update Disciplinary Grade**
-## **<element class="http-put">PUT<element>** - /cisciplinary_grade/<element class="path-put">pk_dg</element>/update/
+## **<element class="http-put">PUT<element>** - /disciplinary_grade/<element class="path-put">pk_dg</element>/update/
 
 
 

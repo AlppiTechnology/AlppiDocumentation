@@ -1,5 +1,4 @@
 ---
-status: new
 icon: material/routes
 ---
 
@@ -25,6 +24,12 @@ icon: material/routes
 | Atualizar | campussettings/[int:pk_campus]/ | {{ superuser() }} {{ admin() }}  |
 | Mudar Senha | campussettings/change-password/  | {{ superuser() }} {{ admin() }}  |
 
+
+## Profile
+| Ação | Rota | Permissões |
+| :-------------- | ------------- | --- |
+| Visualizar | profile/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
+| Atualizar | profile/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 
 ## Employee
 | Ação | Rota | Permissões |

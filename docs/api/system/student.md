@@ -1,6 +1,3 @@
----
-status: new
----
 # Student
 
 **Get Student**
@@ -865,7 +862,7 @@ status: new
 
 **Change Passwrod Student**
 
-## {{ route("PUT", "/student/change-password/", new=True) }}
+## {{ route("PUT", "/student/change-password/") }}
 
 ??? note "Description"
 

@@ -21,6 +21,7 @@ nav:
         - Class: api/system/class.md
         - Employee: api/system/employee.md
         - Pedagogical: api/system/pedagogical.md
+        - Profile: api/system/profile.md
         - School Year: api/system/school_year.md
         - School Grade: api/system/school_grade.md
         - School Level: api/system/school_level.md
@@ -50,6 +51,7 @@ nav:
     - Releases: # COLOCAR SEMPRE DECRESCENTE
       - System:
         - Version 1.0.0:
+          - release-notes/system/v1/v1.0.9.md
           - release-notes/system/v1/v1.0.8.md
           - release-notes/system/v1/v1.0.7.md
           - release-notes/system/v1/v1.0.6.md

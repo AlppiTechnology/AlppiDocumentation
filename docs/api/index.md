@@ -1,5 +1,4 @@
 
-
 # Legenda
 
 ## :material-tag: - Versão Atual

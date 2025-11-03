@@ -1,7 +1,7 @@
 # Title
 
 
-## {{ route("GET", "/campussettings/{pk_campus}") }}
+## {{ route("GET", "/campussettings/{pk_campus}", upd=True) }}
 
 ## {{ route("PUT", "/student/change-password/{teste}", new=True) }}
 
@@ -15,8 +15,7 @@
 
 ---
 
-## **<element class="http-get">GET<element>** - /campus/<element class="path-get">pk_campus</element>/
-
+## {{ route("GET", "/campus/{pk_campus}") }}
 
 ??? note "Description"
     
@@ -127,7 +126,8 @@
 ---
 
 **List Campus**
-## **<element class="http-get">GET<element>** - /campus/list/
+
+## {{ route("GET", "/campus/list/") }}
 
 
 ??? note "Description"
@@ -258,7 +258,8 @@
 ---
 
 **Create Campus**
-## **<element class="http-post">POST<element>** - /campus/create/
+
+## {{ route("POST", "/campus/create/") }}
 
 
 
@@ -430,8 +431,8 @@
 ---
 
 **Update Campus**
-## **<element class="http-put">PUT<element>** - /campus/<element class="path-put">pk_campus</element>/update/
 
+## {{ route("PUT", "/campus/{pk_campus}/update") }}
 
 
 
@@ -622,8 +623,8 @@
 ---
 
 **Change Status Campus**
-## **<element class="http-put">PUT<element>** - /campus/<element class="path-put">pk_campus</element>/changestatus/
 
+## {{ route("PUT", "/campus/{pk_campus}/changestatus") }}
 
 
 
@@ -722,8 +723,8 @@
 ---
 
 **Delete Campus**
-## **<element class="http-del">DELL<element>** - /campus/<element class="path-del">pk_campus</element>/delete/
 
+## {{ route("DELETE", "/campus/{pk_student}/delete/") }}
 
 
 ??? note "Description"
