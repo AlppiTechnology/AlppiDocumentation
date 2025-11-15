@@ -1,5 +1,6 @@
 ---
 icon: material/routes
+status: new
 ---
 
 
@@ -30,6 +31,7 @@ icon: material/routes
 | :-------------- | ------------- | --- |
 | Visualizar | profile/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 | Atualizar | profile/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
+| :material-new-box:{ .new-alert } Mudar Senha | profile/change-password/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 
 ## Employee
 | Ação | Rota | Permissões |

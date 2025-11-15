@@ -8,18 +8,16 @@ status: new
 
 ---
 
-## {{ route("GET", "/profile/", new=True) }}
+## {{ route("GET", "/profile/") }}
 
 ??? note "Description"
-    
+
     ### Description
-    Retorna os dados pessoais do usuarios. 
+    Retorna os dados pessoais do usuarios.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header | string | None | No | Obtained in **Login** |
-
+| Name            | In     | Type   | Default | Nullable | Description           |
+| :-------------- | :----- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header | string | None    | No       | Obtained in **Login** |
 
 ### **Response Body**
 
@@ -46,7 +44,7 @@ status: new
         ```
 
     ??? info "Schema"
-    
+
         ```{ .json .no-copy}
             {
                 "pk_user": integer,
@@ -78,7 +76,7 @@ status: new
         ```
 
         ??? info "Schema"
-        
+
             ``` { .json .no-copy}
                 {
                     "detail": string,
@@ -98,7 +96,7 @@ status: new
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
@@ -110,22 +108,18 @@ status: new
 
 **List Campus**
 
-
-## {{ route("PUT", "/profile/", new=True) }}
+## {{ route("PUT", "/profile/") }}
 
 ??? note "Description"
-    
+
     ### Description
-    Rota para a atualização dos dados pessoais do usuários. 
+    Rota para a atualização dos dados pessoais do usuários.
 
-
-| Name              | In | Type | Default | Nullable | Description                          |
-| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
-| `Authorization`   | header | string | None | No | Obtained in **Login** |
-
+| Name            | In     | Type   | Default | Nullable | Description           |
+| :-------------- | :----- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header | string | None    | No       | Obtained in **Login** |
 
 ### **Request Body**
-
 
 === "application/json"
 
@@ -141,8 +135,9 @@ status: new
     "birth_date": "1999-12-14"
     }
     ```
+
 ??? info "Body Schema"
-    
+
     ```json
     {
         "username": string,
@@ -182,7 +177,7 @@ status: new
         ```
 
     ??? info "Schema"
-    
+
         ```json
         {
             "pk_user": integer,
@@ -214,7 +209,7 @@ status: new
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -231,7 +226,7 @@ status: new
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string,
@@ -252,7 +247,7 @@ status: new
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": object,
@@ -272,10 +267,122 @@ status: new
         ```
 
         ??? info "Schema"
-        
+
             ```{ .json .no-copy}
                 {
                     "detail": string
+                    "error": string
+                }
+            ```
+
+---
+
+## {{ route("PUT", "/profile/change-password/", new=True )}}
+
+??? note "Description"
+
+    ### Description
+    Rota para mudar senha do usuario.
+
+    É mudado a senha do proprio usuario.
+
+| Name            | In     | Type   | Default | Nullable | Description           |
+| :-------------- | :----- | :----- | :------ | :------- | :-------------------- |
+| `Authorization` | header | string | None    | No       | Obtained in **Login** |
+
+### **Request Body**
+
+=== "application/json"
+
+    ``` json
+    {
+        "old_password" : "EscolaTiradentes@2025",
+        "new_password": "Teste@2025"
+    }
+    ```
+
+??? info "Body Schema"
+
+    ```json
+    {
+        "old_password" : string,
+        "new_password": string
+    }
+    ```
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        {
+            "results": "Senha atualizada com sucesso."
+        }
+        ```
+
+    ??? info "Schema"
+
+        ```json
+        {
+            "results": string
+        }
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Não foi possivel encontrar este User.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+    === "Error 2"
+
+        ``` json
+            {
+                "detail": "Senha atual incorreta.",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao mudar senha do usuario",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
                     "error": string
                 }
             ```
