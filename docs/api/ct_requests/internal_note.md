@@ -1,3 +1,6 @@
+---
+status: new
+---
 # Internal Note
 
 **Get Internal Note**
@@ -559,6 +562,100 @@
 ---
 
 **Update Internal Note**
+
+
+
+## {{ route("POST", "/internal_note/download-report/", new=True) }}
+
+
+??? note "Description"
+    
+    ### Description
+    Rota para baixar um documento de relatório do comunicado interno de uma CI especifica.
+
+
+| Name              | In | Type | Default | Nullable | Description                          |
+| :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
+| `Authorization`   | header | string | None | No | Obtained in **Login** |
+
+
+### **Request Body**
+
+
+=== "application/json"
+
+    ``` json
+    {
+        "internal_note": [1]
+    }
+    ```
+??? info "Body Schema"
+    
+    ```{ .json .no-copy}
+    {
+        "internal_note": array of integers
+    }
+    ```
+
+### **Response Body**
+
+??? success "200"
+
+    === "application/json"
+
+        ``` json
+        Arquivo Nove do Aluno_00345.pdf (B64)
+        ```
+
+    ??? info "Schema"
+    
+        ```{ .json .no-copy}
+        N/A
+        ```
+
+??? warning "400"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "CI não encontrada",
+                "render": 1
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string,
+                    "render": integer
+                }
+            ```
+
+
+??? danger "500"
+
+    === "Error 1"
+
+        ``` json
+            {
+                "detail": "Problemas ao Baixar Comunicado Interno: error...",
+                "error": "descrição do erro interno"
+            }
+        ```
+
+        ??? info "Schema"
+        
+            ```{ .json .no-copy}
+                {
+                    "detail": string
+                    "error": string
+                }
+            ```
+
+---
+
 
 ## **<element class="http-put">PUT<element>** - /internal_note/<element class="path-put">pk_internal_note</element>/update/
 

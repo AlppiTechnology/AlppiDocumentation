@@ -31,7 +31,7 @@ status: new
 | :-------------- | ------------- | --- |
 | Visualizar | profile/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 | Atualizar | profile/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
-| :material-new-box:{ .new-alert } Mudar Senha | profile/change-password/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
+| Mudar Senha | profile/change-password/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 
 ## Employee
 | Ação | Rota | Permissões |
@@ -201,6 +201,7 @@ status: new
 | Atualizar | internal_note/[int:pk]/update/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
 | Atualiza Parcialmente | internal_note/[int:pk]/partial_update/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 | Deletar | internal_note/[int:pk]/delete/ | {{ superuser() }} |
+| :material-new-box:{ .new-alert } Relatório CI | internal_note/download-report/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
 
 ## Internal Note Comment
 | Ação | Rota | Permissões |

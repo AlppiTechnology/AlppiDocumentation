@@ -1,5 +1,6 @@
 ---
 icon: material/tooth
+status: new
 ---
 # Introdução às Rotas do Colégio Tiradentes
 

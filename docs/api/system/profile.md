@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Profile
 
 **Get Campus**
@@ -277,7 +273,7 @@ status: new
 
 ---
 
-## {{ route("PUT", "/profile/change-password/", new=True )}}
+## {{ route("PUT", "/profile/change-password/")}}
 
 ??? note "Description"
 

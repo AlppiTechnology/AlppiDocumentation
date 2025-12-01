@@ -1,13 +1,12 @@
 ---
 icon: material/monitor-screenshot
-status: new
 ---
 
 | Tela | Permissões |
 | -------------- | ------------- |
 | Login | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 | Campus | {{ superuser() }} {{ admin() }} |
-|:material-new-box:{ .new-alert } Profile | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }}  |
+| Profile | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }}  |
 | Usuario | {{ superuser() }} {{ admin() }}  |
 | Emplyee | {{ superuser() }} {{ admin() }}  |
 | Ano Letivo | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
