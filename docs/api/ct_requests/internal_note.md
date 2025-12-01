@@ -573,6 +573,8 @@ status: new
     ### Description
     Rota para baixar um documento de relatório do comunicado interno de uma CI especifica.
 
+    Os numeros adicionados na lista devem ser a ``pk_internal_note``, podendo ser obtida em ``/internal_note/list/``
+
 
 | Name              | In | Type | Default | Nullable | Description                          |
 | :-----------------|:---|:-----|:--------|:---------|:------------------------------------ |
