@@ -1,0 +1,112 @@
+:root {
+    --color-http-get: #5bff60;
+    --color-http-post: #ff9900;
+    --color-http-put: #0084ff;
+    --color-http-del: #ff0000;
+    --color-http-patch: #9a52ff;
+    --color-http-get__bg: #00fc082b;
+    --color-http-post__bg: #ff99002d;
+    --color-http-put__bg: #0084ff2b;
+    --color-http-patch__bg: #9a52ff35;
+    --color-http-del__bg: #ff00002e;
+
+    --color-path-get: #00cc07;
+    --color-path-post: #ff9900b3;
+    --color-path-put: #0084ffb5;
+    --color-path-patch: #6b40a8;
+    --color-path-del: #ff0000bd;
+
+    --md-status--tag: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>tag</title><path d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg>')
+
+}
+
+
+.http-get {
+    background-color: var(--color-http-get__bg);
+    border: .05rem solid var(--color-http-get);
+    border-radius: .3em;
+    padding: .1rem .9rem;
+    margin-right: .3em;
+}
+
+.http-post {
+    background-color: var(--color-http-post__bg);
+    border: .05rem solid var(--color-http-post);
+    border-radius: .3em;
+    padding: .1rem .9rem;
+    margin-right: .3em;
+}
+
+.http-put {
+    background-color: var(--color-http-put__bg);
+    border: .05rem solid var(--color-http-put);
+    border-radius: .3em;
+    padding: .1rem .9rem;
+    margin-right: .3em;
+}
+
+.http-patch {
+    background-color: var(--color-http-patch__bg);
+    border: .05rem solid var(--color-http-patch);
+    border-radius: .3em;
+    padding: .1rem .9rem;
+    margin-right: .3em;
+}
+
+.http-del {
+    background-color: var(--color-http-del__bg);
+    border: .05rem solid var(--color-http-del);
+    border-radius: .3em;
+    padding: .1rem .9rem;
+    margin-right: .3em;
+}
+
+.path-get {
+    color: var(--color-path-get);
+    text-decoration: underline;
+}
+
+.path-post {
+    color: var(--color-path-post);
+    text-decoration: underline;
+}
+
+.path-put {
+    color: var(--color-path-put);
+    text-decoration: underline;
+}
+
+.path-patch {
+    color: var(--color-path-patch);
+    text-decoration: underline;
+}
+
+.path-del {
+    color: var(--color-path-del);
+    text-decoration: underline;
+}
+
+
+@keyframes crecente {
+  0%, 40%, 80%, 100% {
+    transform: scale(1.10);
+  }
+  20%, 60% {
+    transform: scale(1.25);
+  }
+
+}
+.new-alert {
+  animation: crecente 1000ms infinite;
+  color: #ffcc00;
+}
+
+.upd-alert {
+  animation: crecente 1000ms infinite;
+  color: #872bff;
+}
+
+.md-status--tag::after {
+  mask-image: var(--md-status--tag);
+  -webkit-mask-image: var(--md-status--tag);
+}
