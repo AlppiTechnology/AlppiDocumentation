@@ -410,7 +410,7 @@ status: new
 
 **Create Internal Note**
 
-## **<element class="http-post">POST<element>** - /internal_note/create/
+## {{ route("POST", "/internal_note/create/", upd=True) }}
 
 ??? note "Description"
 
@@ -434,6 +434,8 @@ status: new
     O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal.
 
     O `workflow` é o fluxo de movimentações de status a Nota Internal
+
+    update: Regulaments não é mais obrigatório, podendo enviar uma lista vazia.
 
 | Name            | In     | Type   | Default | Nullable | Description           |
 | :-------------- | :----- | :----- | :------ | :------- | :-------------------- |
@@ -565,7 +567,7 @@ status: new
 
 
 
-## {{ route("POST", "/internal_note/download-report/", new=True) }}
+## {{ route("POST", "/internal_note/download-report/", upd=True) }}
 
 
 ??? note "Description"
@@ -659,7 +661,8 @@ status: new
 ---
 
 
-## **<element class="http-put">PUT<element>** - /internal_note/<element class="path-put">pk_internal_note</element>/update/
+
+## {{ route("PUT", "/internal_note/{pk_internal_note}/update/", upd=True) }}
 
 ??? note "Description"
 
@@ -685,6 +688,8 @@ status: new
     O `regulaments` são os regulamentos que o CAL pode anexar a Nota Internal.
 
     O `workflow` é o fluxo de movimentações de status a Nota Internal
+
+    update: Regulaments não é mais obrigatório, podendo enviar uma lista vazia.
 
 | Name               | In             | Type   | Default | Nullable | Description                          |
 | :----------------- | :------------- | :----- | :------ | :------- | :----------------------------------- |

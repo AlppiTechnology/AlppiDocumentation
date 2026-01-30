@@ -197,11 +197,11 @@ status: new
 | :-------------- | ------------- | --- |
 | Listar | internal_note/list/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 | Visualizar | internal_note/[int:pk]/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
-| Criar | internal_note/create/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
-| Atualizar | internal_note/[int:pk]/update/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
+| :material-star-box:{ .upd-alert } Criar | internal_note/create/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
+| :material-star-box:{ .upd-alert } Atualizar | internal_note/[int:pk]/update/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
 | Atualiza Parcialmente | internal_note/[int:pk]/partial_update/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} {{ teacher() }} {{ student() }} |
 | Deletar | internal_note/[int:pk]/delete/ | {{ superuser() }} |
-| :material-new-box:{ .new-alert } Relatório CI | internal_note/download-report/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
+| Relatório CI | internal_note/download-report/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
 
 ## Internal Note Comment
 | Ação | Rota | Permissões |

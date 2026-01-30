@@ -1,5 +1,6 @@
 ---
 icon: material/key-chain
+status: new
 ---
 # Introdução à Rotas de Autenticação
 

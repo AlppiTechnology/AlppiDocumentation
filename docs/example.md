@@ -1,5 +1,6 @@
 # Title
 
+| :material-new-box:{ .new-alert } Relatório CI | internal_note/download-report/ | {{ superuser() }} {{ admin() }} {{ coordinator() }} {{ evaluator() }} |
 
 ## {{ route("GET", "/campussettings/{pk_campus}", upd=True) }}
 

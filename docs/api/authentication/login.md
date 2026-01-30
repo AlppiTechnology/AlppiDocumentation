@@ -1,7 +1,11 @@
+---
+status: new
+---
+
 # User Authentication
 ## Login Route
 
-{{ route("POST", "/login/") }}
+{{ route("POST", "/login/", upd=True) }}
 
 
 ??? note "Description"
@@ -12,6 +16,10 @@
     **_user_access:_** Este token concede ao usuário a permissão para acessar o sistema, encapsulando informações essenciais, como ID do usuário, nome, status, e o grupo ao qual ele pertence.
     
     - obs: **_email_auth:_** Informar se está configurado as credenciais de email para envio de email
+
+    **_first_access:_** 0: primeiro acesso | 1: já foi trocado a senha
+    
+    - obs: obrigatório trocar senha no primeiro acesso
 
     **_system_modules:_** Este token define quais módulos do sistema estão disponíveis para o usuário, com base nas permissões concedidas à instituição.
 
@@ -27,6 +35,7 @@
     "campus_code": 1,
     "pk_campus": 1,
     "email_auth": true,
+    "first_access": 1,
     "ip_adress": "131.221.12.242",
     "group": "superuser",
     "current_school_year": 3,
